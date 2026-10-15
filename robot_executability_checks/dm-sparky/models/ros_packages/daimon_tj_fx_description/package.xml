@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>daimon_tj_fx_description</name>
+  <version>0.1.0</version>
+  <description>URDF description package for the TJ_FX dual-arm assembly.</description>
+
+  <maintainer email="ubuntu@todo.todo">ubuntu</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>rclpy</depend>
+  <depend>sensor_msgs</depend>
+  <depend>joint_state_publisher</depend>
+  <depend>robot_state_publisher</depend>
+  <depend>rviz2</depend>
+  <depend>ament_index_cpp</depend>
+  <depend>interactive_markers</depend>
+  <depend>visualization_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>wbc_msgs</depend>
+  <exec_depend>dm25pd04_eg_urdf_tianji_20260807</exec_depend>
+  <depend>launch</depend>
+  <depend>launch_ros</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

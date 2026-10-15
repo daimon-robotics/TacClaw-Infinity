@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="daimon_tj_fx_dual_arm_with_gripper">
+  
+  
+  <link name="base_root" />
+  <joint name="base_root_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="base_root" />
+    <child link="base_link" />
+  </joint>
+  <link name="base_link">
+    <inertial>
+      <origin xyz="6.5371E-09 5.7012E-05 -0.75896" rpy="0 0 0" />
+      <mass value="22.519" />
+      <inertia ixx="2.3917" ixy="-1.9403E-08" ixz="-1.0872E-07" iyy="2.3623" iyz="-0.00097072" izz="0.1594" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 -1.5708" />
+      <geometry>
+        <mesh filename="package://daimon_tj_fx_description/meshes/base/base_link.STL" />
+      </geometry>
+      <material name="base_white">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 -1.5708" /><geometry><box size="0.40 0.35 1.55" /></geometry></collision></link>
+  <link name="Link_L">
+    <inertial>
+      <origin xyz="0.005 -2.0841E-18 2.1398E-18" rpy="0 0 0" />
+      <mass value="0.011184" />
+      <inertia ixx="2.2192E-05" ixy="-1.7213E-21" ixz="4.7087E-21" iyy="1.1189E-05" iyz="0" izz="1.1189E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://daimon_tj_fx_description/meshes/base/Link_L.STL" />
+      </geometry>
+      <material name="base_white" />
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0" /><geometry><box size="0.06 0.06 0.06" /></geometry></collision></link>
+  <joint name="base_to_Link_L_joint" type="fixed">
+    <origin xyz="-0.06 0 0" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="Link_L" />
+  </joint>
+  <link name="Link_R">
+    <inertial>
+      <origin xyz="-0.005 -3.238E-19 -6.2177E-18" rpy="0 0 0" />
+      <mass value="0.011184" />
+      <inertia ixx="2.2192E-05" ixy="-2.0036E-21" ixz="4.7087E-21" iyy="1.1189E-05" iyz="-2.4074E-35" izz="1.1189E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://daimon_tj_fx_description/meshes/base/Link_R.STL" />
+      </geometry>
+      <material name="base_white" />
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0" /><geometry><box size="0.06 0.06 0.06" /></geometry></collision></link>
+  <joint name="base_to_Link_R_joint" type="fixed">
+    <origin xyz="0.06 0 0" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="Link_R" />
+  </joint>
+  <joint name="Link_L_to_Base_L_joint" type="fixed">
+    <origin xyz="0.06 0.06 0" rpy="-1.5708 0 0" />
+    <parent link="Link_L" />
+    <child link="Base_L" />
+  </joint>
+  <joint name="Link_R_to_Base_R_joint" type="fixed">
+    <origin xyz="-0.06 -0.06 0" rpy="1.5708 0 0" />
+    <parent link="Link_R" />
+    <child link="Base_R" />
+  </joint>
+  <link name="Base_L">
+    <inertial>
+      <origin xyz="0.00032267 4.798E-05 0.04066353" rpy="0 0 0" />
+      <mass value="1.1962" />
+      <inertia ixx="0.00107329" ixy="-1.68E-06" ixz="-1.05E-05" iyy="0.00107003" iyz="-3.43E-06" izz="0.00127315" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://daimon_tj_fx_description/meshes/left/Base_L.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0" /><geometry><box size="0.14 0.14 0.18" /></geometry></collision></link>
+  <link name="Link1_L">
+    <inertial>
+      <origin xyz="0.00002347 0.00557150 -0.03075998" rpy="0 0 0" />
+      <mass value="1.9705" />
+      <inertia ixx="0.00492293" ixy="0.00000550" ixz="0.00000193" iyy="0.00526513" iyz="0.00033232" izz="0.00188107" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://daimon_tj_fx_description/meshes/left/Link1_L.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0 1 0 1" />
+      </material>
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0" /><geometry><cylinder radius="0.065" length="0.14" /></geometry></collision></link>
+  <joint name="Joint1_L" type="revolute">
+    <origin xyz="0 0 0.1745" rpy="0 0 0" />
+    <parent link="Base_L" />
+    <child link="Link1_L" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.1067" upper="3.1067" effort="108" velocity="3.1416" />
+  </joint>
+  <link name="Link2_L">
+    <inertial>
+      <origin xyz="0.00013483 0.06170460 0.00950639" rpy="0 0 0" />
+      <mass value="2.24398" />
+      <inertia ixx="0.01194933" ixy="0.00000336" ixz="0.00000091" iyy="0.00361581" iyz="-0.00132804" izz="0.01098356" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://daimon_tj_fx_description/meshes/left/Link2_L.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0 0 1 1" />
+      </material>
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0" /><geometry><cylinder radius="0.055" length="0.30" /></geometry></collision></link>
+  <joint name="Joint2_L" type="revolute">
+    <origin xyz="0 0 0" rpy="1.5708 0 0" />
+    <parent link="Link1_L" />
+    <child link="Link2_L" />
+    <axis xyz="0 0 1" />
+    <limit lower="-2.0944" upper="2.0944" effort="108" velocity="3.1416" />
+  </joint>
+  <link name="Link3_L">
+    <inertial>
+      <origin xyz="0.00968562 0.00246599 -0.04627302" rpy="0 0 0" />
+      <mass value="1.9242" />
+      <inertia ixx="0.00718224" ixy="0.00004413" ixz="0.00089552" iyy="0.00762563" iyz="0.00022096" izz="0.00178597" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://daimon_tj_fx_description/meshes/left/Link3_L.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0" /><geometry><cylinder radius="0.05" length="0.28" /></geometry></collision></link>
+  <joint name="Joint3_L" type="revolute">
+    <origin xyz="0 0.287 0" rpy="-1.5708 0 0" />
+    <parent link="Link2_L" />
+    <child link="Link3_L" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.1067" upper="3.1067" effort="66" velocity="3.1416" />
+  </joint>
+  <link name="Link4_L">
+    <inertial>
+      <origin xyz="0.00850411 -0.04718223 0.00941509" rpy="0 0 0" />
+      <mass value="1.6085" />
+      <inertia ixx="0.00580480" ixy="-0.00066669" ixz="-0.00012722" iyy="0.00223807" iyz="0.00070523" izz="0.00533060" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://daimon_tj_fx_description/meshes/left/Link4_L.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0 1 0 1" />
+      </material>
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0" /><geometry><cylinder radius="0.04" length="0.22" /></geometry></collision></link>
+  <joint name="Joint4_L" type="revolute">
+    <origin xyz="0.018 0 0" rpy="-1.5708 0 3.1416" />
+    <parent link="Link3_L" />
+    <child link="Link4_L" />
+    <axis xyz="0 0 1" />
+    <limit lower="-2.5307" upper="1.0472" effort="66" velocity="3.1416" />
+  </joint>
+  <link name="Link5_L">
+    <inertial>
+      <origin xyz="0.00051127 0.00101064 -0.11271739" rpy="0 0 0" />
+      <mass value="2.0883" />
+      <inertia ixx="0.00626603" ixy="0.00004009" ixz="0.00005338" iyy="0.00564387" iyz="-0.00006193" izz="0.00243632" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://daimon_tj_fx_description/meshes/left/Link5_L.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0 0 1 1" />
+      </material>
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0" /><geometry><cylinder radius="0.035" length="0.25" /></geometry></collision></link>
+  <joint name="Joint5_L" type="revolute">
+    <origin xyz="0.018 -0.314 0" rpy="-1.5708 0 3.1416" />
+    <parent link="Link4_L" />
+    <child link="Link5_L" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.1067" upper="3.1067" effort="18" velocity="3.1416" />
+  </joint>
+  <link name="Link6_L">
+    <inertial>
+      <origin xyz="0.00032659 0.00531336 -0.00030182" rpy="0 0 0" />
+      <mass value="0.72496" />
+      <inertia ixx="0.00046040" ixy="0.00000189" ixz="0.00000083" iyy="0.00051716" iyz="-0.00000346" izz="0.00042521" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://daimon_tj_fx_description/meshes/left/Link6_L.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0" /><geometry><cylinder radius="0.03" length="0.13" /></geometry></collision></link>
+  <joint name="Joint6_L" type="revolute">
+    <origin xyz="0 0 0" rpy="1.5708 -1.5708 0" />
+    <parent link="Link5_L" />
+    <child link="Link6_L" />
+    <axis xyz="0 0 1" />
+    <limit lower="-1.0472" upper="1.0472" effort="18" velocity="3.1416" />
+  </joint>
+  <link name="Link7_L">
+    <inertial>
+      <origin xyz="-0.00009108 -0.03153255 0.00889371" rpy="0 0 0" />
+      <mass value="0.68606" />
+      <inertia ixx="0.00173687" ixy="-0.00000345" ixz="-0.00000116" iyy="0.00089035" iyz="0.00030680" izz="0.00139406" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://daimon_tj_fx_description/meshes/left/Link7_L.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0 1 0 1" />
+      </material>
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0" /><geometry><sphere radius="0.04" /></geometry></collision></link>
+  <joint name="Joint7_L" type="revolute">
+    <origin xyz="0 0 0" rpy="1.5708 -1.5708 0" />
+    <parent link="Link6_L" />
+    <child link="Link7_L" />
+    <axis xyz="0 0 1" />
+    <limit lower="-1.5708" upper="1.5708" effort="18" velocity="3.1416" />
+  </joint>
+  <link name="ee_link_L"><collision><origin xyz="0 0 0" rpy="0 0 0" /><geometry><box size="0.01 0.01 0.01" /></geometry></collision></link>
+  <joint name="ee_fixed_joint_L" type="fixed">
+    <origin xyz="0 -0.095 0" rpy="0 0 0" />
+    <parent link="Link7_L" />
+    <child link="ee_link_L" />
+  </joint>
+  <link name="Base_R">
+    <inertial>
+      <origin xyz="0.00032267 4.798E-05 0.04066353" rpy="0 0 0" />
+      <mass value="1.1962" />
+      <inertia ixx="0.00107329" ixy="-1.68E-06" ixz="-1.05E-05" iyy="0.00107003" iyz="-3.43E-06" izz="0.00127315" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://daimon_tj_fx_description/meshes/right/Base_R.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0" /><geometry><box size="0.14 0.14 0.18" /></geometry></collision></link>
+  <link name="Link1_R">
+    <inertial>
+      <origin xyz="0.00002347 0.00557150 -0.03075998" rpy="0 0 0" />
+      <mass value="1.9705" />
+      <inertia ixx="0.00492293" ixy="0.00000550" ixz="0.00000193" iyy="0.00526513" iyz="0.00033232" izz="0.00188107" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://daimon_tj_fx_description/meshes/right/Link1_R.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0 1 0 1" />
+      </material>
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0" /><geometry><cylinder radius="0.065" length="0.14" /></geometry></collision></link>
+  <joint name="Joint1_R" type="revolute">
+    <origin xyz="0 0 0.1745" rpy="0 0 0" />
+    <parent link="Base_R" />
+    <child link="Link1_R" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.1067" upper="3.1067" effort="108" velocity="3.1416" />
+  </joint>
+  <link name="Link2_R">
+    <inertial>
+      <origin xyz="0.00013483 0.06170460 0.00950639" rpy="0 0 0" />
+      <mass value="2.24398" />
+      <inertia ixx="0.01194933" ixy="0.00000336" ixz="0.00000091" iyy="0.00361581" iyz="-0.00132804" izz="0.01098356" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://daimon_tj_fx_description/meshes/right/Link2_R.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0 0 1 1" />
+      </material>
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0" /><geometry><cylinder radius="0.055" length="0.30" /></geometry></collision></link>
+  <joint name="Joint2_R" type="revolute">
+    <origin xyz="0 0 0" rpy="1.5708 0 0" />
+    <parent link="Link1_R" />
+    <child link="Link2_R" />
+    <axis xyz="0 0 1" />
+    <limit lower="-2.0944" upper="2.0944" effort="108" velocity="3.1416" />
+  </joint>
+  <link name="Link3_R">
+    <inertial>
+      <origin xyz="0.00968562 0.00246599 -0.04627302" rpy="0 0 0" />
+      <mass value="1.9242" />
+      <inertia ixx="0.00718224" ixy="0.00004413" ixz="0.00089552" iyy="0.00762563" iyz="0.00022096" izz="0.00178597" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://daimon_tj_fx_description/meshes/right/Link3_R.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0" /><geometry><cylinder radius="0.05" length="0.28" /></geometry></collision></link>
+  <joint name="Joint3_R" type="revolute">
+    <origin xyz="0 0.287 0" rpy="-1.5708 0 0" />
+    <parent link="Link2_R" />
+    <child link="Link3_R" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.1067" upper="3.1067" effort="66" velocity="3.1416" />
+  </joint>
+  <link name="Link4_R">
+    <inertial>
+      <origin xyz="0.00850411 -0.04718223 0.00941509" rpy="0 0 0" />
+      <mass value="1.6085" />
+      <inertia ixx="0.00580480" ixy="-0.00066669" ixz="-0.00012722" iyy="0.00223807" iyz="0.00070523" izz="0.00533060" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://daimon_tj_fx_description/meshes/right/Link4_R.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0 1 0 1" />
+      </material>
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0" /><geometry><cylinder radius="0.04" length="0.22" /></geometry></collision></link>
+  <joint name="Joint4_R" type="revolute">
+    <origin xyz="0.018 0 0" rpy="-1.5708 0 3.1416" />
+    <parent link="Link3_R" />
+    <child link="Link4_R" />
+    <axis xyz="0 0 1" />
+    <limit lower="-2.5307" upper="1.0472" effort="66" velocity="3.1416" />
+  </joint>
+  <link name="Link5_R">
+    <inertial>
+      <origin xyz="-0.00051127 -0.00101064 -0.11271739" rpy="0 0 0" />
+      <mass value="2.0883" />
+      <inertia ixx="0.00626603" ixy="0.00004009" ixz="-0.00005338" iyy="0.00564387" iyz="0.00006193" izz="0.00243632" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://daimon_tj_fx_description/meshes/right/Link5_R.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0 0 1 1" />
+      </material>
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0" /><geometry><cylinder radius="0.035" length="0.25" /></geometry></collision></link>
+  <joint name="Joint5_R" type="revolute">
+    <origin xyz="0.018 -0.314 0" rpy="-1.5708 0 3.1416" />
+    <parent link="Link4_R" />
+    <child link="Link5_R" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.1067" upper="3.1067" effort="18" velocity="3.1416" />
+  </joint>
+  <link name="Link6_R">
+    <inertial>
+      <origin xyz="0.00032659 -0.00531336 0.00030182" rpy="0 0 0" />
+      <mass value="0.72496" />
+      <inertia ixx="0.00046040" ixy="-0.00000189" ixz="-0.00000083" iyy="0.00051716" iyz="-0.00000346" izz="0.00042521" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://daimon_tj_fx_description/meshes/right/Link6_R.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0" /><geometry><cylinder radius="0.03" length="0.13" /></geometry></collision></link>
+  <joint name="Joint6_R" type="revolute">
+    <origin xyz="0 0 0" rpy="1.5708 -1.5708 0" />
+    <parent link="Link5_R" />
+    <child link="Link6_R" />
+    <axis xyz="0 0 1" />
+    <limit lower="-1.0472" upper="1.0472" effort="18" velocity="3.1416" />
+  </joint>
+  <link name="Link7_R">
+    <inertial>
+      <origin xyz="-0.00009108 -0.03153255 0.00889371" rpy="0 0 0" />
+      <mass value="0.68606" />
+      <inertia ixx="0.00173687" ixy="-0.00000345" ixz="-0.00000116" iyy="0.00089035" iyz="0.00030680" izz="0.00139406" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://daimon_tj_fx_description/meshes/right/Link7_R.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0 1 0 1" />
+      </material>
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0" /><geometry><sphere radius="0.04" /></geometry></collision></link>
+  <joint name="Joint7_R" type="revolute">
+    <origin xyz="0 0 0" rpy="1.5708 -1.5708 0" />
+    <parent link="Link6_R" />
+    <child link="Link7_R" />
+    <axis xyz="0 0 1" />
+    <limit lower="-1.5708" upper="1.5708" effort="18" velocity="3.1416" />
+  </joint>
+  <link name="ee_link_R"><collision><origin xyz="0 0 0" rpy="0 0 0" /><geometry><box size="0.01 0.01 0.01" /></geometry></collision></link>
+  <joint name="ee_fixed_joint_R" type="fixed">
+    <origin xyz="0 -0.095 0" rpy="0 0 0" />
+    <parent link="Link7_R" />
+    <child link="ee_link_R" />
+  </joint>
+  
+  <link name="gripper_base_link_L">
+    <inertial>
+      <origin xyz="-0.0039818 0.0036468 -0.028999" rpy="0 0 0" />
+      <mass value="0.094997" />
+      <inertia ixx="9.536E-05" ixy="-5.9884E-07" ixz="2.0812E-07" iyy="5.9771E-05" iyz="-6.9665E-07" izz="7.8439E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://daimon_tj_fx_description/meshes/gripper/base_link.STL" />
+      </geometry>
+      <material name=""><color rgba="1 1 1 1" /></material>
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0" /><geometry><box size="0.09 0.07 0.06" /></geometry></collision></link>
+  <link name="gripper_Link2_L">
+    <inertial>
+      <origin xyz="-7.6328E-17 -4.6756E-18 0.0045627" rpy="0 0 0" />
+      <mass value="0.037088" />
+      <inertia ixx="1.5532E-05" ixy="1.4862E-22" ixz="2.2978E-21" iyy="1.5914E-05" iyz="7.6958E-21" izz="3.0711E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://daimon_tj_fx_description/meshes/gripper/Link2.STL" />
+      </geometry>
+      <material name=""><color rgba="1 1 1 1" /></material>
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0" /><geometry><cylinder radius="0.025" length="0.015" /></geometry></collision></link>
+  <link name="gripper_Link3_L">
+    <inertial>
+      <origin xyz="-0.012791 -0.00011638 6.7771E-05" rpy="0 0 0" />
+      <mass value="0.0041673" />
+      <inertia ixx="3.7286E-07" ixy="-1.4344E-09" ixz="1.9151E-09" iyy="2.0979E-07" iyz="5.2628E-09" izz="2.2286E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://daimon_tj_fx_description/meshes/gripper/Link3.STL" />
+      </geometry>
+      <material name=""><color rgba="1 1 1 1" /></material>
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0" /><geometry><box size="0.03 0.03 0.01" /></geometry></collision></link>
+  <link name="gripper_Link4_L">
+    <inertial>
+      <origin xyz="-0.027145 -0.031899 0.052158" rpy="0 0 0" />
+      <mass value="0.03223" />
+      <inertia ixx="1.8028E-05" ixy="-1.6034E-06" ixz="2.9305E-06" iyy="1.6301E-05" iyz="4.9557E-06" izz="6.8319E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://daimon_tj_fx_description/meshes/gripper/Link4.STL" />
+      </geometry>
+      <material name=""><color rgba="0.68627 0.68627 0.68627 1" /></material>
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0" /><geometry><box size="0.04 0.02 0.07" /></geometry></collision></link>
+  <link name="gripper_Link6_L">
+    <inertial>
+      <origin xyz="-0.01 -0.01326 -0.003851" rpy="0 0 0" />
+      <mass value="0.0093839" />
+      <inertia ixx="4.7436E-06" ixy="2.7709E-13" ixz="-7.1813E-13" iyy="4.576E-06" iyz="1.2732E-06" izz="7.9264E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://daimon_tj_fx_description/meshes/gripper/Link6.STL" />
+      </geometry>
+      <material name=""><color rgba="0.98039 0.5098 0.19608 1" /></material>
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0" /><geometry><box size="0.03 0.015 0.05" /></geometry></collision></link>
+  <link name="gripper_Link5_L">
+    <inertial>
+      <origin xyz="-0.027108 0.031836 0.052003" rpy="0 0 0" />
+      <mass value="0.032331" />
+      <inertia ixx="1.8145E-05" ixy="1.6201E-06" ixz="2.9577E-06" iyy="1.6398E-05" iyz="-5.0042E-06" izz="6.8738E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://daimon_tj_fx_description/meshes/gripper/Link5.STL" />
+      </geometry>
+      <material name=""><color rgba="0.68627 0.68627 0.68627 1" /></material>
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0" /><geometry><box size="0.04 0.02 0.07" /></geometry></collision></link>
+  <link name="gripper_Link7_L">
+    <inertial>
+      <origin xyz="-0.01 0.01326 -0.003851" rpy="0 0 0" />
+      <mass value="0.0093839" />
+      <inertia ixx="4.7436E-06" ixy="2.7709E-13" ixz="7.1813E-13" iyy="4.576E-06" iyz="-1.2732E-06" izz="7.9264E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://daimon_tj_fx_description/meshes/gripper/Link7.STL" />
+      </geometry>
+      <material name=""><color rgba="0.98039 0.5098 0.19608 1" /></material>
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0" /><geometry><box size="0.03 0.015 0.05" /></geometry></collision></link>
+
+  <joint name="gripper_Link2_joint_L" type="fixed">
+    <origin xyz="0.010346 0 0.074711" rpy="0 0 0.7854" />
+    <parent link="gripper_Link2_L" />
+    <child link="gripper_base_link_L" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <joint name="gripper_Link3_joint_L" type="fixed">
+    <origin xyz="0.078811 0 -0.025089" rpy="0 -1.4312 -3.1416" />
+    <parent link="gripper_base_link_L" />
+    <child link="gripper_Link3_L" />
+    <axis xyz="0 0 0" />
+  </joint>
+  
+  <joint name="left_endeffector_joint" type="revolute">
+    <origin xyz="0.0328 -0.008 0" rpy="-1.0472 0 0" />
+    <parent link="gripper_base_link_L" />
+    <child link="gripper_Link4_L" />
+    <axis xyz="1 0 0" />
+    <limit lower="0" upper="1.0" effort="0" velocity="0" />
+  </joint>
+  <joint name="gripper_Link6_joint_L" type="fixed">
+    <origin xyz="-0.0228 -0.011286 0.061202" rpy="0 0 0" />
+    <parent link="gripper_Link4_L" />
+    <child link="gripper_Link6_L" />
+    <axis xyz="0 0 0" />
+  </joint>
+  
+  <joint name="left_endeffector_mimic_joint" type="revolute">
+    <origin xyz="0.0328 0.008 0" rpy="1.0472 0 0" />
+    <parent link="gripper_base_link_L" />
+    <child link="gripper_Link5_L" />
+    <axis xyz="-1 0 0" />
+    <limit lower="0" upper="1.0" effort="0" velocity="0" />
+    <mimic joint="left_endeffector_joint" multiplier="1" offset="0" />
+  </joint>
+  <joint name="gripper_Link7_joint_L" type="fixed">
+    <origin xyz="-0.0228 0.011286 0.061202" rpy="0 0 0" />
+    <parent link="gripper_Link5_L" />
+    <child link="gripper_Link7_L" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <joint name="gripper_mount_joint_L" type="fixed">
+    <origin xyz="0 0 0" rpy="1.57079632679 0 0" />
+    <parent link="ee_link_L" />
+    <child link="gripper_Link2_L" />
+    <axis xyz="0 0 0" />
+  </joint>
+
+  
+  <link name="gripper_base_link_R">
+    <inertial>
+      <origin xyz="-0.0039818 0.0036468 -0.028999" rpy="0 0 0" />
+      <mass value="0.094997" />
+      <inertia ixx="9.536E-05" ixy="-5.9884E-07" ixz="2.0812E-07" iyy="5.9771E-05" iyz="-6.9665E-07" izz="7.8439E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://daimon_tj_fx_description/meshes/gripper/base_link.STL" />
+      </geometry>
+      <material name=""><color rgba="1 1 1 1" /></material>
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0" /><geometry><box size="0.09 0.07 0.06" /></geometry></collision></link>
+  <link name="gripper_Link2_R">
+    <inertial>
+      <origin xyz="-7.6328E-17 -4.6756E-18 0.0045627" rpy="0 0 0" />
+      <mass value="0.037088" />
+      <inertia ixx="1.5532E-05" ixy="1.4862E-22" ixz="2.2978E-21" iyy="1.5914E-05" iyz="7.6958E-21" izz="3.0711E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://daimon_tj_fx_description/meshes/gripper/Link2.STL" />
+      </geometry>
+      <material name=""><color rgba="1 1 1 1" /></material>
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0" /><geometry><cylinder radius="0.025" length="0.015" /></geometry></collision></link>
+  <link name="gripper_Link3_R">
+    <inertial>
+      <origin xyz="-0.012791 -0.00011638 6.7771E-05" rpy="0 0 0" />
+      <mass value="0.0041673" />
+      <inertia ixx="3.7286E-07" ixy="-1.4344E-09" ixz="1.9151E-09" iyy="2.0979E-07" iyz="5.2628E-09" izz="2.2286E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://daimon_tj_fx_description/meshes/gripper/Link3.STL" />
+      </geometry>
+      <material name=""><color rgba="1 1 1 1" /></material>
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0" /><geometry><box size="0.03 0.03 0.01" /></geometry></collision></link>
+  <link name="gripper_Link4_R">
+    <inertial>
+      <origin xyz="-0.027145 -0.031899 0.052158" rpy="0 0 0" />
+      <mass value="0.03223" />
+      <inertia ixx="1.8028E-05" ixy="-1.6034E-06" ixz="2.9305E-06" iyy="1.6301E-05" iyz="4.9557E-06" izz="6.8319E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://daimon_tj_fx_description/meshes/gripper/Link4.STL" />
+      </geometry>
+      <material name=""><color rgba="0.68627 0.68627 0.68627 1" /></material>
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0" /><geometry><box size="0.04 0.02 0.07" /></geometry></collision></link>
+  <link name="gripper_Link6_R">
+    <inertial>
+      <origin xyz="-0.01 -0.01326 -0.003851" rpy="0 0 0" />
+      <mass value="0.0093839" />
+      <inertia ixx="4.7436E-06" ixy="2.7709E-13" ixz="-7.1813E-13" iyy="4.576E-06" iyz="1.2732E-06" izz="7.9264E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://daimon_tj_fx_description/meshes/gripper/Link6.STL" />
+      </geometry>
+      <material name=""><color rgba="0.98039 0.5098 0.19608 1" /></material>
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0" /><geometry><box size="0.03 0.015 0.05" /></geometry></collision></link>
+  <link name="gripper_Link5_R">
+    <inertial>
+      <origin xyz="-0.027108 0.031836 0.052003" rpy="0 0 0" />
+      <mass value="0.032331" />
+      <inertia ixx="1.8145E-05" ixy="1.6201E-06" ixz="2.9577E-06" iyy="1.6398E-05" iyz="-5.0042E-06" izz="6.8738E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://daimon_tj_fx_description/meshes/gripper/Link5.STL" />
+      </geometry>
+      <material name=""><color rgba="0.68627 0.68627 0.68627 1" /></material>
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0" /><geometry><box size="0.04 0.02 0.07" /></geometry></collision></link>
+  <link name="gripper_Link7_R">
+    <inertial>
+      <origin xyz="-0.01 0.01326 -0.003851" rpy="0 0 0" />
+      <mass value="0.0093839" />
+      <inertia ixx="4.7436E-06" ixy="2.7709E-13" ixz="7.1813E-13" iyy="4.576E-06" iyz="-1.2732E-06" izz="7.9264E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://daimon_tj_fx_description/meshes/gripper/Link7.STL" />
+      </geometry>
+      <material name=""><color rgba="0.98039 0.5098 0.19608 1" /></material>
+    </visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0" /><geometry><box size="0.03 0.015 0.05" /></geometry></collision></link>
+
+  <joint name="gripper_Link2_joint_R" type="fixed">
+    <origin xyz="0.010346 0 0.074711" rpy="0 0 -0.7854" />
+    <parent link="gripper_Link2_R" />
+    <child link="gripper_base_link_R" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <joint name="gripper_Link3_joint_R" type="fixed">
+    <origin xyz="0.078811 0 -0.025089" rpy="0 -1.4312 -3.1416" />
+    <parent link="gripper_base_link_R" />
+    <child link="gripper_Link3_R" />
+    <axis xyz="0 0 0" />
+  </joint>
+  
+  <joint name="right_endeffector_joint" type="revolute">
+    <origin xyz="0.0328 -0.008 0" rpy="-1.0472 0 0" />
+    <parent link="gripper_base_link_R" />
+    <child link="gripper_Link4_R" />
+    <axis xyz="1 0 0" />
+    <limit lower="0" upper="1.0" effort="0" velocity="0" />
+  </joint>
+  <joint name="gripper_Link6_joint_R" type="fixed">
+    <origin xyz="-0.0228 -0.011286 0.061202" rpy="0 0 0" />
+    <parent link="gripper_Link4_R" />
+    <child link="gripper_Link6_R" />
+    <axis xyz="0 0 0" />
+  </joint>
+  
+  <joint name="right_endeffector_mimic_joint" type="revolute">
+    <origin xyz="0.0328 0.008 0" rpy="1.0472 0 0" />
+    <parent link="gripper_base_link_R" />
+    <child link="gripper_Link5_R" />
+    <axis xyz="-1 0 0" />
+    <limit lower="0" upper="1.0" effort="0" velocity="0" />
+    <mimic joint="right_endeffector_joint" multiplier="1" offset="0" />
+  </joint>
+  <joint name="gripper_Link7_joint_R" type="fixed">
+    <origin xyz="-0.0228 0.011286 0.061202" rpy="0 0 0" />
+    <parent link="gripper_Link5_R" />
+    <child link="gripper_Link7_R" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <joint name="gripper_mount_joint_R" type="fixed">
+    <origin xyz="0 0 0" rpy="-1.57079632679 0 3.14159265359" />
+    <parent link="ee_link_R" />
+    <child link="gripper_Link2_R" />
+    <axis xyz="0 0 0" />
+  </joint>
+</robot>

@@ -1,0 +1,570 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="dual_rm75_b_visualization">
+  <mujoco>
+    <compiler balanceinertia="true" discardvisual="false" fusestatic="false" strippath="false" />
+  </mujoco>
+  <link name="dual_base">
+    <visual>
+      <origin xyz="-0.06 0 -1.2235" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dual_rm75_b_description/meshes/stand/DM-TR01-01-01A.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="">
+        <color rgba="0.24 0.27 0.31 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="-0.06 0 -1.2135" rpy="0 -1.57079632679 0" />
+      <geometry>
+        <mesh filename="package://dual_rm75_b_description/meshes/stand/DM-TR01-01-02A.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="">
+        <color rgba="0.52 0.55 0.59 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="-0.06 0 -0.2535" rpy="0 -1.57079632679 0" />
+      <geometry>
+        <mesh filename="package://dual_rm75_b_description/meshes/stand/DM-TR01-01-04A.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="">
+        <color rgba="0.34 0.37 0.41 1" />
+      </material>
+    </visual>
+    <visual>
+      <origin xyz="-0.06 -0.050 -0.0895" rpy="-1.57079632679 0 0" />
+      <geometry>
+        <mesh filename="package://dual_rm75_b_description/meshes/stand/DM-TR01-01-03A.stl" scale="0.001 0.001 0.000222222222" />
+      </geometry>
+      <material name="">
+        <color rgba="0.58 0.61 0.65 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="left_base_link">
+    <inertial>
+      <origin xyz="0.00049987 5.2709E-05 0.060019" rpy="0 0 0" />
+      <mass value="1.862" />
+      <inertia ixx="0.0017232" ixy="-3.1058E-06" ixz="-3.7924E-05" iyy="0.0017051" iyz="1.3691E-06" izz="0.00090158" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dual_rm75_b_description/meshes/rm75_b/base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.88 0.90 0.96 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="left_link_1">
+    <inertial>
+      <origin xyz="0.000241 -0.013273 -0.00995" rpy="0 0 0" />
+      <mass value="1.574" />
+      <inertia ixx="0.002487573" ixy="0.000009663" ixz="-0.000007909" iyy="0.002321038" iyz="0.000179393" izz="0.001450554" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dual_rm75_b_description/meshes/rm75_b/link_1.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.88 0.90 0.96 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="left_link_2">
+    <inertial>
+      <origin xyz="-0.000357 -0.106789 0.005329" rpy="0 0 0" />
+      <mass value="1.217" />
+      <inertia ixx="0.003494121" ixy="0.000002921" ixz="-0.000005613" iyy="0.000892721" iyz="-0.000583884" izz="0.003444080" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dual_rm75_b_description/meshes/rm75_b/link_2.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.88 0.90 0.96 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="left_link_3">
+    <inertial>
+      <origin xyz="0.000003 -0.01398 -0.011324" rpy="0 0 0" />
+      <mass value="1.11" />
+      <inertia ixx="0.001836663" ixy="0.000002259" ixz="-0.000004216" iyy="0.001498875" iyz="0.000037167" izz="0.001062545" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dual_rm75_b_description/meshes/rm75_b/link_3.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.88 0.90 0.96 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="left_link_4">
+    <inertial>
+      <origin xyz="-0.000005 -0.084658 0.004747" rpy="0 0 0" />
+      <mass value="0.685" />
+      <inertia ixx="0.001282444" ixy="-0.000000551" ixz="-0.000000630" iyy="0.000373013" iyz="-0.000232084" izz="0.001256177" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dual_rm75_b_description/meshes/rm75_b/link_4.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.88 0.90 0.96 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="left_link_5">
+    <inertial>
+      <origin xyz="0.000078 -0.012937 -0.008781" rpy="0 0 0" />
+      <mass value="0.619" />
+      <inertia ixx="0.000627336" ixy="0.000001636" ixz="-0.000001345" iyy="0.000542455" iyz="0.000034970" izz="0.000370291" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dual_rm75_b_description/meshes/rm75_b/link_5.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.88 0.90 0.96 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="left_link_6">
+    <inertial>
+      <origin xyz="-0.000014 -0.078524 0.002819" rpy="0 0 0" />
+      <mass value="0.602" />
+      <inertia ixx="0.000780774" ixy="-0.000000121" ixz="-0.000000469" iyy="0.000289973" iyz="-0.000120513" izz="0.000763955" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dual_rm75_b_description/meshes/rm75_b/link_6.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.88 0.90 0.96 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="left_link_7">
+    <inertial>
+      <origin xyz="0.001094 -0.000077 -0.010119" rpy="0 0 0" />
+      <mass value="0.107" />
+      <inertia ixx="0.000044123" ixy="-0.000000064" ixz="0.0000003" iyy="0.000035078" iyz="-0.000000029" izz="0.000065445" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dual_rm75_b_description/meshes/rm75_b/link_7.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.88 0.90 0.96 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="left_joint_1" type="revolute">
+    <origin xyz="0 0 0.2405" rpy="0 0 0" />
+    <parent link="left_base_link" />
+    <child link="left_link_1" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.106" upper="3.106" effort="60" velocity="3.14" />
+  </joint>
+  <joint name="left_joint_2" type="revolute">
+    <origin xyz="0 0 0" rpy="-1.5708 0 0" />
+    <parent link="left_link_1" />
+    <child link="left_link_2" />
+    <axis xyz="0 0 1" />
+    <limit lower="-2.2689" upper="2.2689" effort="60" velocity="3.14" />
+  </joint>
+  <joint name="left_joint_3" type="revolute">
+    <origin xyz="0 -0.256 0" rpy="1.5708 0 0" />
+    <parent link="left_link_2" />
+    <child link="left_link_3" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.106" upper="3.106" effort="30" velocity="3.14" />
+  </joint>
+  <joint name="left_joint_4" type="revolute">
+    <origin xyz="0 0 0" rpy="-1.5708 0 0" />
+    <parent link="left_link_3" />
+    <child link="left_link_4" />
+    <axis xyz="0 0 1" />
+    <limit lower="-2.356" upper="2.356" effort="30" velocity="3.14" />
+  </joint>
+  <joint name="left_joint_5" type="revolute">
+    <origin xyz="0 -0.21 0" rpy="1.5708 0 0" />
+    <parent link="left_link_4" />
+    <child link="left_link_5" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.106" upper="3.106" effort="10" velocity="3.14" />
+  </joint>
+  <joint name="left_joint_6" type="revolute">
+    <origin xyz="0 0 0" rpy="-1.5708 0 0" />
+    <parent link="left_link_5" />
+    <child link="left_link_6" />
+    <axis xyz="0 0 1" />
+    <limit lower="-2.234" upper="2.234" effort="10" velocity="3.14" />
+  </joint>
+  <joint name="left_joint_7" type="revolute">
+    <origin xyz="0 -0.144 0" rpy="1.5708 0 0" />
+    <parent link="left_link_6" />
+    <child link="left_link_7" />
+    <axis xyz="0 0 1" />
+    <limit lower="-6.28" upper="6.28" effort="10" velocity="3.14" />
+  </joint>
+  <joint name="left_mount_joint" type="fixed">
+    <origin xyz="-0.060000 0.050000 -0.089500" rpy="-1.57079632679 0 0" />
+    <parent link="dual_base" />
+    <child link="left_base_link" />
+  </joint>
+  <link name="left_gripper_mount_plate">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dual_rm75_b_description/meshes/dm25pd04_eg/Link2.STL" scale="1 1 1" />
+      </geometry>
+      <material name="">
+        <color rgba="0.72 0.74 0.78 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="left_tcp">
+    <inertial>
+      <origin xyz="0.023517 2.231E-05 0.003614" rpy="0 0 0" />
+      <mass value="0.21009" />
+      <inertia ixx="0.00020645" ixy="2.4198E-08" ixz="1.7913E-05" iyy="0.00014276" iyz="1.3169E-06" izz="0.0001535" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dual_rm75_b_description/meshes/umi_gripper/umi_gripper_base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="left_gripper_main_camera">
+    <inertial>
+      <origin xyz="8.9744E-07 -2.4966E-06 -0.0056367" rpy="0 0 0" />
+      <mass value="0.0015406" />
+      <inertia ixx="3.8691E-08" ixy="4.3748E-13" ixz="7.9283E-12" iyy="3.8683E-08" iyz="-1.3445E-11" izz="2.9107E-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dual_rm75_b_description/meshes/umi_gripper/main_camera.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="left_gripper_binocular_camera">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dual_rm75_b_description/meshes/umi_gripper/binocular_camera.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="left_gripper_main_camera_joint" type="fixed">
+    <origin xyz="0.078813 0 -0.025092" rpy="-0.13963 0 1.5708" />
+    <parent link="left_tcp" />
+    <child link="left_gripper_main_camera" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <joint name="left_gripper_binocular_camera_joint" type="fixed">
+    <origin xyz="0.05533 -0.04 -0.026285" rpy="0.5236 0 1.5708" />
+    <parent link="left_tcp" />
+    <child link="left_gripper_binocular_camera" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <joint name="left_gripper_adapter_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="left_link_7" />
+    <child link="left_gripper_mount_plate" />
+  </joint>
+  <joint name="left_gripper_tcp_joint" type="fixed">
+    <origin xyz="0.010346 0 0.074711" rpy="0 0 0" />
+    <parent link="left_gripper_mount_plate" />
+    <child link="left_tcp" />
+  </joint>
+  <link name="right_base_link">
+    <inertial>
+      <origin xyz="0.00049987 5.2709E-05 0.060019" rpy="0 0 0" />
+      <mass value="1.862" />
+      <inertia ixx="0.0017232" ixy="-3.1058E-06" ixz="-3.7924E-05" iyy="0.0017051" iyz="1.3691E-06" izz="0.00090158" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dual_rm75_b_description/meshes/rm75_b/base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.78 0.84 0.96 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="right_link_1">
+    <inertial>
+      <origin xyz="0.000241 -0.013273 -0.00995" rpy="0 0 0" />
+      <mass value="1.574" />
+      <inertia ixx="0.002487573" ixy="0.000009663" ixz="-0.000007909" iyy="0.002321038" iyz="0.000179393" izz="0.001450554" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dual_rm75_b_description/meshes/rm75_b/link_1.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.78 0.84 0.96 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="right_link_2">
+    <inertial>
+      <origin xyz="-0.000357 -0.106789 0.005329" rpy="0 0 0" />
+      <mass value="1.217" />
+      <inertia ixx="0.003494121" ixy="0.000002921" ixz="-0.000005613" iyy="0.000892721" iyz="-0.000583884" izz="0.003444080" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dual_rm75_b_description/meshes/rm75_b/link_2.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.78 0.84 0.96 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="right_link_3">
+    <inertial>
+      <origin xyz="0.000003 -0.01398 -0.011324" rpy="0 0 0" />
+      <mass value="1.11" />
+      <inertia ixx="0.001836663" ixy="0.000002259" ixz="-0.000004216" iyy="0.001498875" iyz="0.000037167" izz="0.001062545" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dual_rm75_b_description/meshes/rm75_b/link_3.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.78 0.84 0.96 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="right_link_4">
+    <inertial>
+      <origin xyz="-0.000005 -0.084658 0.004747" rpy="0 0 0" />
+      <mass value="0.685" />
+      <inertia ixx="0.001282444" ixy="-0.000000551" ixz="-0.000000630" iyy="0.000373013" iyz="-0.000232084" izz="0.001256177" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dual_rm75_b_description/meshes/rm75_b/link_4.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.78 0.84 0.96 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="right_link_5">
+    <inertial>
+      <origin xyz="0.000078 -0.012937 -0.008781" rpy="0 0 0" />
+      <mass value="0.619" />
+      <inertia ixx="0.000627336" ixy="0.000001636" ixz="-0.000001345" iyy="0.000542455" iyz="0.000034970" izz="0.000370291" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dual_rm75_b_description/meshes/rm75_b/link_5.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.78 0.84 0.96 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="right_link_6">
+    <inertial>
+      <origin xyz="-0.000014 -0.078524 0.002819" rpy="0 0 0" />
+      <mass value="0.602" />
+      <inertia ixx="0.000780774" ixy="-0.000000121" ixz="-0.000000469" iyy="0.000289973" iyz="-0.000120513" izz="0.000763955" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dual_rm75_b_description/meshes/rm75_b/link_6.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.78 0.84 0.96 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="right_link_7">
+    <inertial>
+      <origin xyz="0.001094 -0.000077 -0.010119" rpy="0 0 0" />
+      <mass value="0.107" />
+      <inertia ixx="0.000044123" ixy="-0.000000064" ixz="0.0000003" iyy="0.000035078" iyz="-0.000000029" izz="0.000065445" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dual_rm75_b_description/meshes/rm75_b/link_7.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.78 0.84 0.96 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="right_joint_1" type="revolute">
+    <origin xyz="0 0 0.2405" rpy="0 0 0" />
+    <parent link="right_base_link" />
+    <child link="right_link_1" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.106" upper="3.106" effort="60" velocity="3.14" />
+  </joint>
+  <joint name="right_joint_2" type="revolute">
+    <origin xyz="0 0 0" rpy="-1.5708 0 0" />
+    <parent link="right_link_1" />
+    <child link="right_link_2" />
+    <axis xyz="0 0 1" />
+    <limit lower="-2.2689" upper="2.2689" effort="60" velocity="3.14" />
+  </joint>
+  <joint name="right_joint_3" type="revolute">
+    <origin xyz="0 -0.256 0" rpy="1.5708 0 0" />
+    <parent link="right_link_2" />
+    <child link="right_link_3" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.106" upper="3.106" effort="30" velocity="3.14" />
+  </joint>
+  <joint name="right_joint_4" type="revolute">
+    <origin xyz="0 0 0" rpy="-1.5708 0 0" />
+    <parent link="right_link_3" />
+    <child link="right_link_4" />
+    <axis xyz="0 0 1" />
+    <limit lower="-2.356" upper="2.356" effort="30" velocity="3.14" />
+  </joint>
+  <joint name="right_joint_5" type="revolute">
+    <origin xyz="0 -0.21 0" rpy="1.5708 0 0" />
+    <parent link="right_link_4" />
+    <child link="right_link_5" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.106" upper="3.106" effort="10" velocity="3.14" />
+  </joint>
+  <joint name="right_joint_6" type="revolute">
+    <origin xyz="0 0 0" rpy="-1.5708 0 0" />
+    <parent link="right_link_5" />
+    <child link="right_link_6" />
+    <axis xyz="0 0 1" />
+    <limit lower="-2.234" upper="2.234" effort="10" velocity="3.14" />
+  </joint>
+  <joint name="right_joint_7" type="revolute">
+    <origin xyz="0 -0.144 0" rpy="1.5708 0 0" />
+    <parent link="right_link_6" />
+    <child link="right_link_7" />
+    <axis xyz="0 0 1" />
+    <limit lower="-6.28" upper="6.28" effort="10" velocity="3.14" />
+  </joint>
+  <joint name="right_mount_joint" type="fixed">
+    <origin xyz="-0.060000 -0.050000 -0.089500" rpy="-1.57079632679 0 3.14159265359" />
+    <parent link="dual_base" />
+    <child link="right_base_link" />
+  </joint>
+  <link name="right_gripper_mount_plate">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dual_rm75_b_description/meshes/dm25pd04_eg/Link2.STL" scale="1 1 1" />
+      </geometry>
+      <material name="">
+        <color rgba="0.72 0.74 0.78 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="right_tcp">
+    <inertial>
+      <origin xyz="0.023517 2.231E-05 0.003614" rpy="0 0 0" />
+      <mass value="0.21009" />
+      <inertia ixx="0.00020645" ixy="2.4198E-08" ixz="1.7913E-05" iyy="0.00014276" iyz="1.3169E-06" izz="0.0001535" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dual_rm75_b_description/meshes/umi_gripper/umi_gripper_base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="right_gripper_main_camera">
+    <inertial>
+      <origin xyz="8.9744E-07 -2.4966E-06 -0.0056367" rpy="0 0 0" />
+      <mass value="0.0015406" />
+      <inertia ixx="3.8691E-08" ixy="4.3748E-13" ixz="7.9283E-12" iyy="3.8683E-08" iyz="-1.3445E-11" izz="2.9107E-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dual_rm75_b_description/meshes/umi_gripper/main_camera.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+  </link>
+  <link name="right_gripper_binocular_camera">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://dual_rm75_b_description/meshes/umi_gripper/binocular_camera.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="right_gripper_main_camera_joint" type="fixed">
+    <origin xyz="0.078813 0 -0.025092" rpy="-0.13963 0 1.5708" />
+    <parent link="right_tcp" />
+    <child link="right_gripper_main_camera" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <joint name="right_gripper_binocular_camera_joint" type="fixed">
+    <origin xyz="0.05533 -0.04 -0.026285" rpy="0.5236 0 1.5708" />
+    <parent link="right_tcp" />
+    <child link="right_gripper_binocular_camera" />
+    <axis xyz="0 0 0" />
+  </joint>
+  <joint name="right_gripper_adapter_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="right_link_7" />
+    <child link="right_gripper_mount_plate" />
+  </joint>
+  <joint name="right_gripper_tcp_joint" type="fixed">
+    <origin xyz="0.010346 0 0.074711" rpy="0 0 0" />
+    <parent link="right_gripper_mount_plate" />
+    <child link="right_tcp" />
+  </joint>
+</robot>

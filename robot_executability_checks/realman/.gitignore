@@ -1,0 +1,7 @@
+.venv/
+native/build/
+__pycache__/
+*.py[cod]
+outputs/
+.workspace_cache/
+.pytest_cache/

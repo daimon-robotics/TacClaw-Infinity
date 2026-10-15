@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Joints>
+    <arm_right_1_joint>
+        <limits>
+            <position low="-2.966" high="2.966" />
+            <velocity low="-3.00" high="3.00" />
+            <acceleration low="-9.00" high="9.00" />
+            <jerk low="-72.00" high="72.00" />
+        </limits>
+        <direction>1</direction>
+    </arm_right_1_joint>
+    <arm_right_2_joint>
+        <limits>
+            <position low="-3.141" high="0.017" />
+            <velocity low="-3.00" high="3.00" />
+            <acceleration low="-9.00" high="9.00" />
+            <jerk low="-72.00" high="72.00" />
+        </limits>
+        <direction>1</direction>
+    </arm_right_2_joint>
+    <arm_right_3_joint>
+        <limits>
+            <position low="-2.966" high="2.966" />
+            <velocity low="-3.00" high="3.00" />
+            <acceleration low="-9.00" high="9.00" />
+            <jerk low="-72.00" high="72.00" />
+        </limits>
+        <direction>1</direction>
+    </arm_right_3_joint>
+    <arm_right_4_joint>
+        <limits>
+            <position low="-1.570" high="1.744" />
+            <velocity low="-3.00" high="3.00" />
+            <acceleration low="-9.00" high="9.00" />
+            <jerk low="-72.00" high="72.00" />
+        </limits>
+        <direction>1</direction>
+    </arm_right_4_joint>
+    <arm_right_5_joint>
+        <limits>
+            <position low="-2.966" high="2.966" />
+            <velocity low="-3.00" high="3.00" />
+            <acceleration low="-12.00" high="12.00" />
+            <jerk low="-90.00" high="90.00" />
+        </limits>
+        <direction>-1</direction>
+    </arm_right_5_joint>
+    <arm_right_6_joint>
+        <limits>
+            <position low="-1.570" high="1.570" />
+            <velocity low="-3.00" high="3.00" />
+            <acceleration low="-12.00" high="12.00" />
+            <jerk low="-90.00" high="90.00" />
+        </limits>
+        <direction>1</direction>
+    </arm_right_6_joint>
+    <arm_right_7_joint>
+        <limits>
+            <position low="-0.78" high="0.78" />
+            <velocity low="-3.00" high="3.00" />
+            <acceleration low="-12.00" high="12.00" />
+            <jerk low="-90.00" high="90.00" />
+        </limits>
+        <direction>-1</direction>
+    </arm_right_7_joint>
+    <arm_left_1_joint>
+        <limits>
+            <position low="-2.966" high="2.966" />
+            <velocity low="-3.00" high="3.00" />
+            <acceleration low="-9.00" high="9.00" />
+            <jerk low="-72.00" high="72.00" />
+        </limits>
+        <direction>1</direction>
+    </arm_left_1_joint>
+    <arm_left_2_joint>
+        <limits>
+            <position low="-0.017" high="3.141" />
+            <velocity low="-3.00" high="3.00" />
+            <acceleration low="-9.00" high="9.00" />
+            <jerk low="-72.00" high="72.00" />
+        </limits>
+        <direction>1</direction>
+    </arm_left_2_joint>
+    <arm_left_3_joint>
+        <limits>
+            <position low="-2.966" high="2.966" />
+            <velocity low="-3.00" high="3.00" />
+            <acceleration low="-9.00" high="9.00" />
+            <jerk low="-72.00" high="72.00" />
+        </limits>
+        <direction>1</direction>
+    </arm_left_3_joint>
+    <arm_left_4_joint>
+        <limits>
+            <position low="-1.744" high="1.570" />
+            <velocity low="-3.00" high="3.00" />
+            <acceleration low="-9.00" high="9.00" />
+            <jerk low="-72.00" high="72.00" />
+        </limits>
+        <direction>1</direction>
+    </arm_left_4_joint>
+    <arm_left_5_joint>
+        <limits>
+            <position low="-2.966" high="2.966" />
+            <velocity low="-3.00" high="3.00" />
+            <acceleration low="-12.00" high="12.00" />
+            <jerk low="-90.00" high="90.00" />
+        </limits>
+        <direction>-1</direction>
+    </arm_left_5_joint>
+    <arm_left_6_joint>
+        <limits>
+            <position low="-1.570" high="1.570" />
+            <velocity low="-3.00" high="3.00" />
+            <acceleration low="-12.00" high="12.00" />
+            <jerk low="-90.00" high="90.00" />
+        </limits>
+        <direction>1</direction>
+    </arm_left_6_joint>
+    <arm_left_7_joint>
+        <limits>
+            <position low="-0.78" high="0.78" />
+            <velocity low="-3.00" high="3.00" />
+            <acceleration low="-12.00" high="12.00" />
+            <jerk low="-90.00" high="90.00" />
+        </limits>
+        <direction>-1</direction>
+    </arm_left_7_joint>
+    <hip_yaw_joint>
+        <limits>
+            <position low="-1.570" high="1.570" />
+            <velocity low="-2.00" high="2.00" />
+            <acceleration low="-6.00" high="6.00" />
+            <jerk low="-18.00" high="18.00" />
+        </limits>
+        <direction>1</direction>
+    </hip_yaw_joint>
+    <hip_pitch_joint>
+        <limits>
+            <position low="-0.70" high="0.7" />
+            <velocity low="-2.00" high="2.00" />
+            <acceleration low="-6.00" high="6.00" />
+            <jerk low="-18.00" high="18.00" />
+        </limits>
+        <direction>-1</direction>
+    </hip_pitch_joint>
+    <knee_joint>
+        <limits>
+            <position low="-0.95" high="0.52" />
+            <velocity low="-2" high="2" />
+            <acceleration low="-10" high="10" />
+            <jerk low="-50" high="50" />
+        </limits>
+        <direction>1</direction>
+    </knee_joint>
+    <head_pitch_joint>
+        <limits>
+            <position low="-0.35" high="0.61" />
+            <velocity low="-3.00" high="3.00" />
+            <acceleration low="-9" high="9" />
+            <jerk low="-72" high="72" />
+        </limits>
+        <direction>1</direction>
+    </head_pitch_joint>
+    <head_yaw_joint>
+        <limits>
+            <position low="-1.05" high="1.05" />
+            <velocity low="-3.00" high="3.00" />
+            <acceleration low="-9" high="9" />
+            <jerk low="-72" high="72" />
+        </limits>
+        <direction>1</direction>
+    </head_yaw_joint>
+    <right_wheel_joint>
+        <limits>
+            <position low="-6" high="6" />
+            <velocity low="-1" high="1" />
+            <acceleration low="-1" high="1" />
+            <jerk low="-1" high="1" />
+        </limits>
+    <direction>1</direction>
+    </right_wheel_joint>
+    <left_wheel_joint>
+        <limits>
+            <position low="-6" high="6" />
+            <velocity low="-1" high="1" />
+            <acceleration low="-1" high="1" />
+            <jerk low="-1" high="1" />
+        </limits>
+    <direction>-1</direction>
+    </left_wheel_joint>
+    <right_endeffector_joint>
+        <limits>
+            <position low="0.0" high="1.0" />
+            <velocity low="-2.0" high="2.0" />
+            <acceleration low="-5.0" high="5.0" />
+            <jerk low="-10.0" high="10.0" />
+        </limits>
+    <direction>1</direction>
+    </right_endeffector_joint>
+    <left_endeffector_joint>
+        <limits>
+            <position low="0.0" high="1.0" />
+            <velocity low="-2.0" high="2.0" />
+            <acceleration low="-5.0" high="5.0" />
+            <jerk low="-10.0" high="10.0" />
+        </limits>
+    <direction>1</direction>
+    </left_endeffector_joint>
+</Joints>

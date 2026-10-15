@@ -1,0 +1,1652 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com)
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="dm25_pr02_hr_pd04_eg_20260810">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0841513040182169 6.99212022612118E-05 0.163330954407248"
+        rpy="0 0 0" />
+      <mass
+        value="38.9509648883754" />
+      <inertia
+        ixx="0.385462628513935"
+        ixy="-5.97678126468093E-05"
+        ixz="0.0103970565939595"
+        iyy="0.271389063743819"
+        iyz="0.000137369875017149"
+        izz="0.461453361771394" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.5 0.4 0.25" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_wheel_link">
+    <inertial>
+      <origin
+        xyz="1.91704091490053E-09 2.67218884857923E-05 -7.26034565801115E-10"
+        rpy="0 0 0" />
+      <mass
+        value="4.25850353582241" />
+      <inertia
+        ixx="0.0322932300835081"
+        ixy="-4.20402743501419E-13"
+        ixz="-3.45584912289508E-10"
+        iyy="0.0636732921866624"
+        iyz="-2.77874252514405E-12"
+        izz="0.0322932293034994" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/left_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="-1.57079632679 0 0" />
+      <geometry>
+        <cylinder radius="0.11" length="0.05" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.130000000000001 0.28 0.116999999999998"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_wheel_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="100"
+      velocity="10" />
+  </joint>
+  <link
+    name="right_wheel_link">
+    <inertial>
+      <origin
+        xyz="2.49886306091796E-09 -2.67228437766942E-05 -6.62336741008573E-09"
+        rpy="0 0 0" />
+      <mass
+        value="4.2585037229564" />
+      <inertia
+        ixx="0.0322932301951571"
+        ixy="-9.63955326812774E-13"
+        ixz="-1.40982179975775E-10"
+        iyy="0.0636732921866624"
+        iyz="-2.64479930947364E-12"
+        izz="0.0322932291918504" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/right_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="-1.57079632679 0 0" />
+      <geometry>
+        <cylinder radius="0.11" length="0.05" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.129999999999999 -0.28 0.117000000000002"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_wheel_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="100"
+      velocity="10" />
+  </joint>
+  <link
+    name="wheel_yaw_link">
+    <inertial>
+      <origin
+        xyz="-0.0126393102236944 0.000353869131875385 -0.0121063996946137"
+        rpy="0 0 0" />
+      <mass
+        value="0.0536455705751293" />
+      <inertia
+        ixx="3.32717516964892E-05"
+        ixy="2.15483505494868E-07"
+        ixz="-3.95425832426551E-06"
+        iyy="2.19636038170687E-05"
+        iyz="3.20584015426412E-07"
+        izz="4.0267859041767E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/wheel_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.012 0 -0.0145" rpy="0 0 0" />
+      <geometry>
+        <box size="0.05 0.05 0.05" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_yaw_joint"
+    type="continuous">
+    <origin
+      xyz="-0.30525 0 0.015999999999999"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_yaw_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="100"
+      velocity="10" />
+  </joint>
+  <link
+    name="wheel_roll_link">
+    <inertial>
+      <origin
+        xyz="-1.85434711502674E-07 7.63278329429795E-17 -5.17423525137062E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.145838176640365" />
+      <inertia
+        ixx="3.98714523307313E-05"
+        ixy="1.02225072007539E-11"
+        ixz="-5.45577693826279E-10"
+        iyy="2.87769325927195E-05"
+        iyz="-6.67193851333264E-11"
+        izz="3.98735931844441E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/wheel_roll_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="-1.57079632679 0 0" />
+      <geometry>
+        <cylinder radius="0.04" length="0.02" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_roll_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0239999999999999 0 -0.029"
+      rpy="0 0 0" />
+    <parent
+      link="wheel_yaw_link" />
+    <child
+      link="wheel_roll_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="100"
+      velocity="10" />
+  </joint>
+  <link
+    name="knee_link">
+    <inertial>
+      <origin
+        xyz="-0.104107228406583 0.000223716702390648 0.162483633055785"
+        rpy="0 0 0" />
+      <mass
+        value="5.89266376473349" />
+      <inertia
+        ixx="0.0761047062933321"
+        ixy="2.70653714882058E-05"
+        ixz="0.0302439777149127"
+        iyy="0.0817825155764698"
+        iyz="0.000313640988310149"
+        izz="0.0592693178533813" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/knee_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.08 0 0.138564064606" rpy="0 0 0" />
+      <geometry>
+        <box size="0.18 0.14 0.34" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="knee_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0.49"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="knee_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.32"
+      upper="0.52"
+      effort="100"
+      velocity="10" />
+  </joint>
+  <link
+    name="hip_pitch_link">
+    <inertial>
+      <origin
+        xyz="0.000127531929373894 -0.00170383598269087 0.082121496704135"
+        rpy="0 0 0" />
+      <mass
+        value="3.70248229500431" />
+      <inertia
+        ixx="0.0162311394583158"
+        ixy="-3.57041054378579E-07"
+        ixz="-2.75132075956118E-07"
+        iyy="0.0114904514728199"
+        iyz="-0.000214764102285598"
+        izz="0.0102231485201958" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/hip_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0.000375 0.0745267710654" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.06" length="0.149055429025" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hip_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="-0.160000000000001 0 0.27712812921102"
+      rpy="0 0 0" />
+    <parent
+      link="knee_link" />
+    <child
+      link="hip_pitch_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.22"
+      upper="0.7"
+      effort="100"
+      velocity="10" />
+  </joint>
+  <link
+    name="hip_yaw_link">
+    <inertial>
+      <origin
+        xyz="0.0203271843197767 -0.00348641723736845 0.21981516304572"
+        rpy="0 0 0" />
+      <mass
+        value="8.93661373763896" />
+      <inertia
+        ixx="0.108287193421962"
+        ixy="4.03388230576612E-05"
+        ixz="0.00119467105548645"
+        iyy="0.066137396178378"
+        iyz="-5.66111920485915E-05"
+        izz="0.056298285494861" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/hip_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.205" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.06" length="0.41" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hip_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.000750000000000174 0.149053542130797"
+      rpy="0 0 0" />
+    <parent
+      link="hip_pitch_link" />
+    <child
+      link="hip_yaw_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="10" />
+  </joint>
+  <link
+    name="head_yaw_link">
+    <inertial>
+      <origin
+        xyz="8.62640310006959E-05 0.000816376991817459 0.105237250784377"
+        rpy="0 0 0" />
+      <mass
+        value="0.458375573100475" />
+      <inertia
+        ixx="0.000183017345149846"
+        ixy="9.51914355999465E-08"
+        ixz="1.60510912824737E-08"
+        iyy="0.000213088098710178"
+        iyz="4.60495142481021E-06"
+        izz="9.61728420568637E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/head_yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 2.5e-04 0.0675" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.05" length="0.135000925923" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="head_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0.409999999999999"
+      rpy="0 0 0" />
+    <parent
+      link="hip_yaw_link" />
+    <child
+      link="head_yaw_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.05"
+      upper="1.05"
+      effort="100"
+      velocity="10" />
+  </joint>
+  <link
+    name="head_pitch_link">
+    <inertial>
+      <origin
+        xyz="0.0545038115546918 -0.000206360127667744 0.0579972774160069"
+        rpy="0 0 0" />
+      <mass
+        value="1.77082663223095" />
+      <inertia
+        ixx="0.00562636981819966"
+        ixy="-1.68794237943348E-06"
+        ixz="0.00171434523691717"
+        iyy="0.00622829702165389"
+        iyz="1.59546069753514E-05"
+        izz="0.00681806462986475" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/head_pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.08" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="head_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.000499999999999671 0.135"
+      rpy="0 0 0" />
+    <parent
+      link="head_yaw_link" />
+    <child
+      link="head_pitch_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.35"
+      upper="0.61"
+      effort="100"
+      velocity="10" />
+  </joint>
+<link
+    name="arm_left_1_link">
+    <inertial>
+      <origin
+        xyz="0.000620908193508797 0.0927824160461364 0.0537962348382616"
+        rpy="0 0 0" />
+      <mass
+        value="2.09345921796694" />
+      <inertia
+        ixx="0.00221322791650524"
+        ixy="-6.74742555366584E-06"
+        ixz="1.29558721500232E-06"
+        iyy="0.00173967762253254"
+        iyz="-0.000167156252014047"
+        izz="0.00191166026099262" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/arm_left_1_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0.0690655258141 0.039875" rpy="0 0 0" />
+      <geometry>
+        <box size="0.08 0.08 0.18" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="arm_left_base_link" />
+  <joint
+    name="arm_left_base_joint"
+    type="fixed">
+    <origin
+      xyz="0 0.116028856829699 0.308217967697245"
+      rpy="0 0 0" />
+    <parent
+      link="hip_yaw_link" />
+    <child
+      link="arm_left_base_link" />
+  </joint>
+  <joint
+    name="arm_left_1_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="arm_left_base_link" />
+    <child
+      link="arm_left_1_link" />
+    <axis
+      xyz="0 0.86602540378444 0.499999999999998" />
+    <limit
+      lower="-3.141"
+      upper="3.141"
+      effort="49"
+      velocity="3.14" />
+  </joint>
+  <link
+    name="arm_left_2_link">
+    <inertial>
+      <origin
+        xyz="0.00577006156744257 0.000868188886447963 -0.076563823557756"
+        rpy="0 0 0" />
+      <mass
+        value="1.3659893846957" />
+      <inertia
+        ixx="0.00362330737484613"
+        ixy="4.87964835563907E-06"
+        ixz="-0.00058726442793647"
+        iyy="0.00405579741831201"
+        iyz="-6.17782907731148E-05"
+        izz="0.00174837872721349" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/arm_left_2_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.06925" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.04" length="0.1385" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="arm_left_2_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.138131051628234 0.079750000000002"
+      rpy="0 0 0" />
+    <parent
+      link="arm_left_1_link" />
+    <child
+      link="arm_left_2_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.017"
+      upper="3.141"
+      effort="49"
+      velocity="3.14" />
+  </joint>
+  <link
+    name="arm_left_3_link">
+    <inertial>
+      <origin
+        xyz="-2.90349366401516E-05 0.00219216772351483 -0.10174719107948"
+        rpy="0 0 0" />
+      <mass
+        value="0.82575638873231" />
+      <inertia
+        ixx="0.00181944627550979"
+        ixy="-3.01287887276851E-07"
+        ixz="-5.03113996980788E-08"
+        iyy="0.00183842951266806"
+        iyz="3.98846976050576E-05"
+        izz="0.000609762343395458" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/arm_left_3_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.06225" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.035" length="0.1245" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="arm_left_3_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.138499999999999"
+      rpy="0 0 0" />
+    <parent
+      link="arm_left_2_link" />
+    <child
+      link="arm_left_3_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-2.967"
+      upper="2.967"
+      effort="13.5"
+      velocity="3.14" />
+  </joint>
+  <link
+    name="arm_left_4_link">
+    <inertial>
+      <origin
+        xyz="9.33785677162523E-05 0.0176687014566042 -0.0433447701222344"
+        rpy="0 0 0" />
+      <mass
+        value="0.182389987327649" />
+      <inertia
+        ixx="0.00034926850327187"
+        ixy="2.89348312185773E-07"
+        ixz="5.4945397375623E-08"
+        iyy="0.000281842572724235"
+        iyz="-0.000101866297407408"
+        izz="0.000219495048842001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/arm_left_4_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.0457500333208" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.032" length="0.0915000666417" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="arm_left_4_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.1245"
+      rpy="0 0 0" />
+    <parent
+      link="arm_left_3_link" />
+    <child
+      link="arm_left_4_link" />
+    <axis
+      xyz="0 0.999999999999999 0" />
+    <limit
+      lower="-1.744"
+      upper="1.570"
+      effort="13.5"
+      velocity="3.14" />
+  </joint>
+  <link
+    name="arm_left_5_link">
+    <inertial>
+      <origin
+        xyz="1.28351272243987E-05 -0.000912832640835248 0.0558299008072813"
+        rpy="0 0 0" />
+      <mass
+        value="1.00440357325315" />
+      <inertia
+        ixx="0.00137017070951297"
+        ixy="-2.454080167545E-07"
+        ixz="3.05049056226632E-07"
+        iyy="0.00131124594280778"
+        iyz="2.15065182067756E-05"
+        izz="0.000614029279514112" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/arm_left_5_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.0415000531352" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.03" length="0.0830001062703" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="arm_left_5_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.0915000666416584"
+      rpy="3.14159265358979 0 0" />
+    <parent
+      link="arm_left_4_link" />
+    <child
+      link="arm_left_5_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-2.966"
+      upper="2.966"
+      effort="8.9"
+      velocity="3.14" />
+  </joint>
+  <link
+    name="arm_left_6_link">
+    <inertial>
+      <origin
+        xyz="-0.00197433819103908 0.00624897094284188 -0.0571871891931581"
+        rpy="0 0 0" />
+      <mass
+        value="0.502210022402583" />
+      <inertia
+        ixx="0.000503800201411289"
+        ixy="-7.43556656358735E-06"
+        ixz="-5.90687727111685E-06"
+        iyy="0.000415145521489372"
+        iyz="-0.000123831593351321"
+        izz="0.000345892969886235" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/arm_left_6_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.0324999016301" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.028" length="0.0649998032603" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="arm_left_6_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0.083000106270311"
+      rpy="-3.14159265358979 0 0" />
+    <parent
+      link="arm_left_5_link" />
+    <child
+      link="arm_left_6_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.570"
+      upper="1.570"
+      effort="8.9"
+      velocity="3.14" />
+  </joint>
+  <link
+    name="arm_left_7_link">
+    <inertial>
+      <origin
+        xyz="0.0145905375227384 8.64594557725695E-07 -0.0356461156035219"
+        rpy="0 0 0" />
+      <mass
+        value="0.295182930840454" />
+      <inertia
+        ixx="0.000209890260501384"
+        ixy="-4.97464594643241E-09"
+        ixz="-8.41699230040045E-05"
+        iyy="0.000274553168209956"
+        iyz="-1.25344421087116E-08"
+        izz="0.00019760499025744" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/arm_left_7_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.03" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="arm_left_7_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.0649998032602936"
+      rpy="0 0 0" />
+    <parent
+      link="arm_left_6_link" />
+    <child
+      link="arm_left_7_link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-0.78"
+      upper="0.78"
+      effort="8.9"
+      velocity="3.14" />
+  </joint>
+  <link
+    name="arm_left_ee_link" />
+  <joint
+    name="arm_left_ee_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 -0.0649998032602936"
+      rpy="0 0 0" />
+    <parent
+      link="arm_left_7_link" />
+    <child
+      link="arm_left_ee_link" />
+  </joint>
+  <!-- DM25PD04-EG gripper. The exported Link2 flange adapter is intentionally
+       omitted. Its x axis offset and the exported base back face are used to
+       center the bare gripper body on arm_left_ee_link. -->
+  <link name="left_gripper_base_link">
+    <inertial>
+      <origin xyz="0.0054038 0.0015827 -0.028226" rpy="0 0 0" />
+      <mass value="0.23464" />
+      <inertia ixx="0.0002465" ixy="-1.9365E-06" ixz="-3.1647E-06"
+               iyy="0.00016503" iyz="-1.9759E-06" izz="0.00021493" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/pd04_base_link.STL" /></geometry>
+      <material name="pd04_body"><color rgba="0.89804 0.91765 0.92941 1" /></material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/pd04_base_link.STL" /></geometry>
+    </collision>
+  </link>
+  <joint name="left_gripper_base_joint" type="fixed">
+    <origin xyz="0 0.010346 -0.064712" rpy="3.14159265359 0 1.57079632679" />
+    <parent link="arm_left_ee_link" />
+    <child link="left_gripper_base_link" />
+  </joint>
+
+  <link name="left_gripper_camera_link">
+    <inertial>
+      <origin xyz="-0.012791 -0.00011638 6.7771E-05" rpy="0 0 0" />
+      <mass value="0.0041673" />
+      <inertia ixx="3.7286E-07" ixy="-1.4344E-09" ixz="1.9151E-09"
+               iyy="2.0979E-07" iyz="5.2628E-09" izz="2.2286E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/pd04_camera_link.STL" /></geometry>
+      <material name="pd04_camera"><color rgba="1 1 1 1" /></material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/pd04_camera_link.STL" /></geometry>
+    </collision>
+  </link>
+  <joint name="left_gripper_camera_joint" type="fixed">
+    <origin xyz="0.078811 0 -0.025089" rpy="0 -1.4312 -3.1416" />
+    <parent link="left_gripper_base_link" />
+    <child link="left_gripper_camera_link" />
+  </joint>
+
+  <link name="left_gripper_finger_1_link">
+    <inertial>
+      <origin xyz="-0.0249 -0.025813 0.037072" rpy="0 0 0" />
+      <mass value="0.084598" />
+      <inertia ixx="4.7837E-05" ixy="-4.3293E-06" ixz="7.9125E-06"
+               iyy="4.28E-05" iyz="1.3322E-05" izz="1.7957E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/pd04_finger_1_link.STL" /></geometry>
+      <material name="pd04_body" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/pd04_finger_1_link.STL" /></geometry>
+    </collision>
+  </link>
+  <joint name="left_endeffector_joint" type="revolute">
+    <origin xyz="0.0328 -0.008 0" rpy="0 0 0" />
+    <parent link="left_gripper_base_link" />
+    <child link="left_gripper_finger_1_link" />
+    <!-- q=0 is the CAD maximum-open pose; q=0.385773 is pad contact. -->
+    <axis xyz="-1 0 0" />
+    <limit lower="0" upper="0.38577301043" effort="0" velocity="0.77154602086" />
+  </joint>
+
+  <link name="left_gripper_finger_1_pad_link">
+    <inertial>
+      <origin xyz="-0.01 -0.01326 -0.003851" rpy="0 0 0" />
+      <mass value="0.011697" />
+      <inertia ixx="5.9129E-06" ixy="3.454E-13" ixz="-8.9515E-13"
+               iyy="5.7039E-06" iyz="1.587E-06" izz="9.8803E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/pd04_finger_1_pad_link.STL" /></geometry>
+      <material name="pd04_pad"><color rgba="0.29804 0.29804 0.29804 1" /></material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/pd04_finger_1_pad_link.STL" /></geometry>
+    </collision>
+  </link>
+  <joint name="left_gripper_finger_1_pad_joint" type="fixed">
+    <origin xyz="-0.0228 -0.011286 0.061202" rpy="0 0 0" />
+    <parent link="left_gripper_finger_1_link" />
+    <child link="left_gripper_finger_1_pad_link" />
+  </joint>
+
+  <link name="left_gripper_finger_2_link">
+    <inertial>
+      <origin xyz="-0.02487 0.025767 0.036961" rpy="0 0 0" />
+      <mass value="0.084871" />
+      <inertia ixx="4.8152E-05" ixy="4.3742E-06" ixz="7.9859E-06"
+               iyy="4.306E-05" iyz="-1.3452E-05" izz="1.8071E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/pd04_finger_2_link.STL" /></geometry>
+      <material name="pd04_body" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/pd04_finger_2_link.STL" /></geometry>
+    </collision>
+  </link>
+  <joint name="left_gripper_state" type="revolute">
+    <origin xyz="0.0328 0.008 0" rpy="0 0 0" />
+    <parent link="left_gripper_base_link" />
+    <child link="left_gripper_finger_2_link" />
+    <axis xyz="1 0 0" />
+    <limit lower="0" upper="0.38577301043" effort="0" velocity="0.77154602086" />
+    <mimic joint="left_endeffector_joint" multiplier="1" offset="0" />
+  </joint>
+
+  <link name="left_gripper_finger_2_pad_link">
+    <inertial>
+      <origin xyz="-0.01 0.01326 -0.003851" rpy="0 0 0" />
+      <mass value="0.011697" />
+      <inertia ixx="5.9129E-06" ixy="3.454E-13" ixz="8.9515E-13"
+               iyy="5.7039E-06" iyz="-1.587E-06" izz="9.8803E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/pd04_finger_2_pad_link.STL" /></geometry>
+      <material name="pd04_pad" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/pd04_finger_2_pad_link.STL" /></geometry>
+    </collision>
+  </link>
+  <joint name="left_gripper_finger_2_pad_joint" type="fixed">
+    <origin xyz="-0.0228 0.011286 0.061202" rpy="0 0 0" />
+    <parent link="left_gripper_finger_2_link" />
+    <child link="left_gripper_finger_2_pad_link" />
+  </joint>
+  <link
+    name="arm_right_1_link">
+    <inertial>
+      <origin
+        xyz="0.000621091021196639 -0.0927817227553284 0.0537962608054746"
+        rpy="0 0 0" />
+      <mass
+        value="2.09344777437675" />
+      <inertia
+        ixx="0.002213210704618"
+        ixy="6.72761439197789E-06"
+        ixz="1.26152248406345E-06"
+        iyy="0.00173974640410289"
+        iyz="0.000167103005410713"
+        izz="0.00191160892764171" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/arm_right_1_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.0690655259518 0.039875" rpy="0 0 0" />
+      <geometry>
+        <box size="0.08 0.08 0.18" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="arm_right_base_link" />
+  <joint
+    name="arm_right_base_joint"
+    type="fixed">
+    <origin
+      xyz="0 -0.116028856829702 0.308217967697244"
+      rpy="0 0 0" />
+    <parent
+      link="hip_yaw_link" />
+    <child
+      link="arm_right_base_link" />
+  </joint>
+  <joint
+    name="arm_right_1_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="arm_right_base_link" />
+    <child
+      link="arm_right_1_link" />
+    <axis
+      xyz="0 -0.866025403784442 0.499999999999994" />
+    <limit
+      lower="-3.141"
+      upper="3.141"
+      effort="49"
+      velocity="3.14" />
+  </joint>
+  <link
+    name="arm_right_2_link">
+    <inertial>
+      <origin
+        xyz="0.0057392721375075 -0.00086652005052329 -0.0765350648444518"
+        rpy="0 0 0" />
+      <mass
+        value="1.36541390434489" />
+      <inertia
+        ixx="0.00362634044765065"
+        ixy="-5.04079372587343E-06"
+        ixz="-0.000585455347450037"
+        iyy="0.00405785807096212"
+        iyz="6.2032204624925E-05"
+        izz="0.00174840458433507" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/arm_right_2_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.06925" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.04" length="0.1385" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="arm_right_2_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.138131051903623 0.0797500000000012"
+      rpy="0 0 0" />
+    <parent
+      link="arm_right_1_link" />
+    <child
+      link="arm_right_2_link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-3.141"
+      upper="0.017"
+      effort="49"
+      velocity="3.14" />
+  </joint>
+  <link
+    name="arm_right_3_link">
+    <inertial>
+      <origin
+        xyz="-2.99347706319321E-05 -0.00219242081765111 -0.101748784829756"
+        rpy="0 0 0" />
+      <mass
+        value="0.82576769638191" />
+      <inertia
+        ixx="0.00181945305828147"
+        ixy="3.22724913552943E-07"
+        ixz="-7.30882467415693E-08"
+        iyy="0.00183843510230465"
+        iyz="-3.98504150979063E-05"
+        izz="0.000609771066241016" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/arm_right_3_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.06225" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.035" length="0.1245" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="arm_right_3_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.138499999999999"
+      rpy="0 0 0" />
+    <parent
+      link="arm_right_2_link" />
+    <child
+      link="arm_right_3_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-2.966"
+      upper="2.966"
+      effort="13.5"
+      velocity="3.14" />
+  </joint>
+  <link
+    name="arm_right_4_link">
+    <inertial>
+      <origin
+        xyz="8.65218699189121E-05 0.0176819969942736 0.0433420998811819"
+        rpy="0 0 0" />
+      <mass
+        value="0.182490493748166" />
+      <inertia
+        ixx="0.000349292923077244"
+        ixy="3.10077763194879E-07"
+        ixz="-6.09376520977701E-08"
+        iyy="0.000281837165889401"
+        iyz="0.000101870578315099"
+        izz="0.000219528588110561" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/arm_right_4_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.0457500333208" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.032" length="0.0915000666417" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="arm_right_4_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.1245"
+      rpy="3.14159265358979 0 0" />
+    <parent
+      link="arm_right_3_link" />
+    <child
+      link="arm_right_4_link" />
+    <axis
+      xyz="0 0.999999999999999 0" />
+    <limit
+      lower="-1.570"
+      upper="1.744"
+      effort="13.5"
+      velocity="3.14" />
+  </joint>
+  <link
+    name="arm_right_5_link">
+    <inertial>
+      <origin
+        xyz="1.15287967938429E-05 -0.000913651977892227 -0.0558295875341598"
+        rpy="0 0 0" />
+      <mass
+        value="1.00438824393209" />
+      <inertia
+        ixx="0.00137011432192741"
+        ixy="-2.41251428026177E-07"
+        ixz="-2.71817858345083E-07"
+        iyy="0.00131114910084214"
+        iyz="-2.15302424596572E-05"
+        izz="0.000614024148352102" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/arm_right_5_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.0415000531352" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.03" length="0.0830001062703" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="arm_right_5_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0915000666416584"
+      rpy="-3.14159265358979 0 0" />
+    <parent
+      link="arm_right_4_link" />
+    <child
+      link="arm_right_5_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.966"
+      upper="2.966"
+      effort="8.9"
+      velocity="3.14" />
+  </joint>
+  <link
+    name="arm_right_6_link">
+    <inertial>
+      <origin
+        xyz="-0.00197476502857737 -0.00624813783163822 -0.0571890312975922"
+        rpy="0 0 0" />
+      <mass
+        value="0.502203466871703" />
+      <inertia
+        ixx="0.000503723091107492"
+        ixy="7.45638068094526E-06"
+        ixz="-5.95981426784784E-06"
+        iyy="0.000415072795737384"
+        iyz="0.000123777809408826"
+        izz="0.000345884173439466" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/arm_right_6_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.0324999016301" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.028" length="0.0649998032603" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="arm_right_6_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.0830001062703108"
+      rpy="0 0 0" />
+    <parent
+      link="arm_right_5_link" />
+    <child
+      link="arm_right_6_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="8.9"
+      velocity="3.14" />
+  </joint>
+  <link
+    name="arm_right_7_link">
+    <inertial>
+      <origin
+        xyz="0.0145913412418822 -3.61969886897295E-07 -0.035647001443447"
+        rpy="0 0 0" />
+      <mass
+        value="0.29518829625437" />
+      <inertia
+        ixx="0.000209856299761057"
+        ixy="-2.81035738202732E-09"
+        ixz="-8.41561625054175E-05"
+        iyy="0.000274517732163428"
+        iyz="-4.48745155813975E-09"
+        izz="0.00019759386424589" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/arm_right_7_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.03" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="arm_right_7_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.0649998032602937"
+      rpy="0 0 0" />
+    <parent
+      link="arm_right_6_link" />
+    <child
+      link="arm_right_7_link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-0.78"
+      upper="0.78"
+      effort="8.9"
+      velocity="3.14" />
+  </joint>
+  <link
+    name="arm_right_ee_link" />
+  <joint
+    name="arm_right_ee_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 -0.0649998032602937"
+      rpy="0 0 0" />
+    <parent
+      link="arm_right_7_link" />
+    <child
+      link="arm_right_ee_link" />
+  </joint>
+
+  <!-- Right-side mirrored instance of the DM25PD04-EG gripper. Link2 omitted. -->
+  <link name="right_gripper_base_link">
+    <inertial>
+      <origin xyz="0.0054038 0.0015827 -0.028226" rpy="0 0 0" />
+      <mass value="0.23464" />
+      <inertia ixx="0.0002465" ixy="-1.9365E-06" ixz="-3.1647E-06"
+               iyy="0.00016503" iyz="-1.9759E-06" izz="0.00021493" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/pd04_base_link.STL" /></geometry>
+      <material name="pd04_body" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/pd04_base_link.STL" /></geometry>
+    </collision>
+  </link>
+  <joint name="right_gripper_base_joint" type="fixed">
+    <origin xyz="0 -0.010346 -0.064712" rpy="3.14159265359 0 -1.57079632679" />
+    <parent link="arm_right_ee_link" />
+    <child link="right_gripper_base_link" />
+  </joint>
+
+  <link name="right_gripper_camera_link">
+    <inertial>
+      <origin xyz="-0.012791 -0.00011638 6.7771E-05" rpy="0 0 0" />
+      <mass value="0.0041673" />
+      <inertia ixx="3.7286E-07" ixy="-1.4344E-09" ixz="1.9151E-09"
+               iyy="2.0979E-07" iyz="5.2628E-09" izz="2.2286E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/pd04_camera_link.STL" /></geometry>
+      <material name="pd04_camera" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/pd04_camera_link.STL" /></geometry>
+    </collision>
+  </link>
+  <joint name="right_gripper_camera_joint" type="fixed">
+    <origin xyz="0.078811 0 -0.025089" rpy="0 -1.4312 -3.1416" />
+    <parent link="right_gripper_base_link" />
+    <child link="right_gripper_camera_link" />
+  </joint>
+
+  <link name="right_gripper_finger_1_link">
+    <inertial>
+      <origin xyz="-0.0249 -0.025813 0.037072" rpy="0 0 0" />
+      <mass value="0.084598" />
+      <inertia ixx="4.7837E-05" ixy="-4.3293E-06" ixz="7.9125E-06"
+               iyy="4.28E-05" iyz="1.3322E-05" izz="1.7957E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/pd04_finger_1_link.STL" /></geometry>
+      <material name="pd04_body" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/pd04_finger_1_link.STL" /></geometry>
+    </collision>
+  </link>
+  <joint name="right_endeffector_joint" type="revolute">
+    <origin xyz="0.0328 -0.008 0" rpy="0 0 0" />
+    <parent link="right_gripper_base_link" />
+    <child link="right_gripper_finger_1_link" />
+    <!-- q=0 is the CAD maximum-open pose; q=0.385773 is pad contact. -->
+    <axis xyz="-1 0 0" />
+    <limit lower="0" upper="0.38577301043" effort="0" velocity="0.77154602086" />
+  </joint>
+
+  <link name="right_gripper_finger_1_pad_link">
+    <inertial>
+      <origin xyz="-0.01 -0.01326 -0.003851" rpy="0 0 0" />
+      <mass value="0.011697" />
+      <inertia ixx="5.9129E-06" ixy="3.454E-13" ixz="-8.9515E-13"
+               iyy="5.7039E-06" iyz="1.587E-06" izz="9.8803E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/pd04_finger_1_pad_link.STL" /></geometry>
+      <material name="pd04_pad" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/pd04_finger_1_pad_link.STL" /></geometry>
+    </collision>
+  </link>
+  <joint name="right_gripper_finger_1_pad_joint" type="fixed">
+    <origin xyz="-0.0228 -0.011286 0.061202" rpy="0 0 0" />
+    <parent link="right_gripper_finger_1_link" />
+    <child link="right_gripper_finger_1_pad_link" />
+  </joint>
+
+  <link name="right_gripper_finger_2_link">
+    <inertial>
+      <origin xyz="-0.02487 0.025767 0.036961" rpy="0 0 0" />
+      <mass value="0.084871" />
+      <inertia ixx="4.8152E-05" ixy="4.3742E-06" ixz="7.9859E-06"
+               iyy="4.306E-05" iyz="-1.3452E-05" izz="1.8071E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/pd04_finger_2_link.STL" /></geometry>
+      <material name="pd04_body" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/pd04_finger_2_link.STL" /></geometry>
+    </collision>
+  </link>
+  <joint name="right_gripper_state" type="revolute">
+    <origin xyz="0.0328 0.008 0" rpy="0 0 0" />
+    <parent link="right_gripper_base_link" />
+    <child link="right_gripper_finger_2_link" />
+    <axis xyz="1 0 0" />
+    <limit lower="0" upper="0.38577301043" effort="0" velocity="0.77154602086" />
+    <mimic joint="right_endeffector_joint" multiplier="1" offset="0" />
+  </joint>
+
+  <link name="right_gripper_finger_2_pad_link">
+    <inertial>
+      <origin xyz="-0.01 0.01326 -0.003851" rpy="0 0 0" />
+      <mass value="0.011697" />
+      <inertia ixx="5.9129E-06" ixy="3.454E-13" ixz="8.9515E-13"
+               iyy="5.7039E-06" iyz="-1.587E-06" izz="9.8803E-07" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/pd04_finger_2_pad_link.STL" /></geometry>
+      <material name="pd04_pad" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="package://dm25_pr02_hr_pd04_eg_20260810/meshes/pd04_finger_2_pad_link.STL" /></geometry>
+    </collision>
+  </link>
+  <joint name="right_gripper_finger_2_pad_joint" type="fixed">
+    <origin xyz="-0.0228 0.011286 0.061202" rpy="0 0 0" />
+    <parent link="right_gripper_finger_2_link" />
+    <child link="right_gripper_finger_2_pad_link" />
+  </joint>
+</robot>

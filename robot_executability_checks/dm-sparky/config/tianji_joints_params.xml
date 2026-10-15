@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Tianji TJ_FX arm position limits copied from the ROS runtime
+  joints_params_tj.xml. Keeping the required 14 joints here makes the
+  evaluator portable and lets it intersect runtime limits with URDF limits.
+-->
+<Joints>
+  <Joint1_L><limits><position low="-3.1067" high="3.1067" /></limits></Joint1_L>
+  <Joint2_L><limits><position low="-2.0944" high="2.0944" /></limits></Joint2_L>
+  <Joint3_L><limits><position low="-3.1067" high="3.1067" /></limits></Joint3_L>
+  <Joint4_L><limits><position low="-2.5307" high="1.0472" /></limits></Joint4_L>
+  <Joint5_L><limits><position low="-3.1067" high="3.1067" /></limits></Joint5_L>
+  <Joint6_L><limits><position low="-1.0472" high="1.0472" /></limits></Joint6_L>
+  <Joint7_L><limits><position low="-1.5708" high="1.5708" /></limits></Joint7_L>
+  <Joint1_R><limits><position low="-3.1067" high="3.1067" /></limits></Joint1_R>
+  <Joint2_R><limits><position low="-2.0944" high="2.0944" /></limits></Joint2_R>
+  <Joint3_R><limits><position low="-3.1067" high="3.1067" /></limits></Joint3_R>
+  <Joint4_R><limits><position low="-2.5307" high="1.0472" /></limits></Joint4_R>
+  <Joint5_R><limits><position low="-3.1067" high="3.1067" /></limits></Joint5_R>
+  <Joint6_R><limits><position low="-1.0472" high="1.0472" /></limits></Joint6_R>
+  <Joint7_R><limits><position low="-1.5708" high="1.5708" /></limits></Joint7_R>
+</Joints>

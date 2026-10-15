@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="DM25PD04_EG_URDF_tianji_20260807">
+  <!-- KDL does not support inertia on the root link. Keep the exported
+       base_link inertia and attach it to a massless ROS 2 root frame. -->
+  <link name="base_footprint" />
+  <joint name="base_footprint_joint" type="fixed">
+    <parent link="base_footprint" />
+    <child link="base_link" />
+  </joint>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0054038 0.0015827 -0.028226"
+        rpy="0 0 0" />
+      <mass
+        value="0.23464" />
+      <inertia
+        ixx="0.0002465"
+        ixy="-1.9365E-06"
+        ixz="-3.1647E-06"
+        iyy="0.00016503"
+        iyz="-1.9759E-06"
+        izz="0.00021493" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25pd04_eg_urdf_tianji_20260807/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25pd04_eg_urdf_tianji_20260807/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Link2">
+    <inertial>
+      <origin
+        xyz="2.0817E-17 -7.2384E-17 0.0054811"
+        rpy="0 0 0" />
+      <mass
+        value="0.055824" />
+      <inertia
+        ixx="3.1672E-05"
+        ixy="1.0626E-20"
+        ixz="-6.461E-21"
+        iyy="1.9826E-05"
+        iyz="-2.3014E-20"
+        izz="4.9115E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25pd04_eg_urdf_tianji_20260807/meshes/Link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25pd04_eg_urdf_tianji_20260807/meshes/Link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Link2"
+    type="fixed">
+    <origin
+      xyz="-0.010346 0 -0.074711"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Link2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Link3">
+    <inertial>
+      <origin
+        xyz="-0.012791 -0.00011638 6.7771E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0041673" />
+      <inertia
+        ixx="3.7286E-07"
+        ixy="-1.4344E-09"
+        ixz="1.9151E-09"
+        iyy="2.0979E-07"
+        iyz="5.2628E-09"
+        izz="2.2286E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25pd04_eg_urdf_tianji_20260807/meshes/Link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25pd04_eg_urdf_tianji_20260807/meshes/Link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Link3"
+    type="fixed">
+    <origin
+      xyz="0.078811 0 -0.025089"
+      rpy="0 -1.4312 -3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="Link3" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Link4">
+    <inertial>
+      <origin
+        xyz="-0.0249 -0.025813 0.037072"
+        rpy="0 0 0" />
+      <mass
+        value="0.084598" />
+      <inertia
+        ixx="4.7837E-05"
+        ixy="-4.3293E-06"
+        ixz="7.9125E-06"
+        iyy="4.28E-05"
+        iyz="1.3322E-05"
+        izz="1.7957E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25pd04_eg_urdf_tianji_20260807/meshes/Link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25pd04_eg_urdf_tianji_20260807/meshes/Link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Link4"
+    type="revolute">
+    <origin
+      xyz="0.0328 -0.008 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Link4" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link6">
+    <inertial>
+      <origin
+        xyz="-0.01 -0.01326 -0.003851"
+        rpy="0 0 0" />
+      <mass
+        value="0.011697" />
+      <inertia
+        ixx="5.9129E-06"
+        ixy="3.454E-13"
+        ixz="-8.9515E-13"
+        iyy="5.7039E-06"
+        iyz="1.587E-06"
+        izz="9.8803E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25pd04_eg_urdf_tianji_20260807/meshes/Link6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.29804 0.29804 0.29804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25pd04_eg_urdf_tianji_20260807/meshes/Link6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Link6"
+    type="fixed">
+    <origin
+      xyz="-0.0228 -0.011286 0.061202"
+      rpy="0 0 0" />
+    <parent
+      link="Link4" />
+    <child
+      link="Link6" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Link5">
+    <inertial>
+      <origin
+        xyz="-0.02487 0.025767 0.036961"
+        rpy="0 0 0" />
+      <mass
+        value="0.084871" />
+      <inertia
+        ixx="4.8152E-05"
+        ixy="4.3742E-06"
+        ixz="7.9859E-06"
+        iyy="4.306E-05"
+        iyz="-1.3452E-05"
+        izz="1.8071E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25pd04_eg_urdf_tianji_20260807/meshes/Link5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25pd04_eg_urdf_tianji_20260807/meshes/Link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Link5"
+    type="revolute">
+    <origin
+      xyz="0.0328 0.008 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Link5" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Link7">
+    <inertial>
+      <origin
+        xyz="-0.01 0.01326 -0.003851"
+        rpy="0 0 0" />
+      <mass
+        value="0.011697" />
+      <inertia
+        ixx="5.9129E-06"
+        ixy="3.454E-13"
+        ixz="8.9515E-13"
+        iyy="5.7039E-06"
+        iyz="-1.587E-06"
+        izz="9.8803E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25pd04_eg_urdf_tianji_20260807/meshes/Link7.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.29804 0.29804 0.29804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://dm25pd04_eg_urdf_tianji_20260807/meshes/Link7.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Link7"
+    type="fixed">
+    <origin
+      xyz="-0.0228 0.011286 0.061202"
+      rpy="0 0 0" />
+    <parent
+      link="Link5" />
+    <child
+      link="Link7" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

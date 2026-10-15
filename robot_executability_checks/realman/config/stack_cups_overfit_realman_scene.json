@@ -1,0 +1,31 @@
+{
+  "table": {
+    "length_m": 1.4,
+    "width_m": 0.7,
+    "height_m": 0.8,
+    "top_thickness_m": 0.04
+  },
+  "robot": {
+    "root_in_table_m": [0.0, 0.30, 0.75],
+    "rotation_robot_from_table": [
+      [0.0, 1.0, 0.0],
+      [-1.0, 0.0, 0.0],
+      [0.0, 0.0, 1.0]
+    ]
+  },
+  "umi_world": {
+    "world_origin_in_table_m": [0.05, 0.11, 0.95],
+    "world_x_direction_in_table": [0.0, 1.0, 0.0],
+    "world_y_downward_horizontal_direction_in_table": [1.0, 0.0, 0.0]
+  },
+  "calibration_board": {
+    "interpretation": "measured_three_side_obtuse_wedge",
+    "panel_width_m": 0.21,
+    "sloped_edge_m": 0.302,
+    "support_base_m": 0.08,
+    "support_side_m": 0.285,
+    "origin_to_top_edge_m": 0.146,
+    "origin_to_bottom_edge_m": 0.156,
+    "panel_thickness_m": 0.003
+  }
+}

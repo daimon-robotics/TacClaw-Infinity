@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>dm25pd04_eg_urdf_tianji_20260807</name>
+  <version>1.0.0</version>
+  <description>ROS 2 URDF description package for the DM25PD04-EG Tianji gripper.</description>
+
+  <maintainer email="ubuntu@todo.todo">ubuntu</maintainer>
+  <license>BSD</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>joint_state_publisher</depend>
+  <depend>robot_state_publisher</depend>
+  <depend>rviz2</depend>
+  <depend>ament_index_python</depend>
+  <depend>launch</depend>
+  <depend>launch_ros</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

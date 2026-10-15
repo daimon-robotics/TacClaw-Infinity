@@ -1,0 +1,242 @@
+# Tight self-collision proxy model generated from the local-frame STL geometry.
+# Body and distal-arm proxies keep about 2 mm margin. The head sphere and
+# upper-torso box jointly cover the neck through the full head-pitch range.
+# The PD04-EG box covers
+# its complete finger stroke; the mobile thigh uses a Y-rotated oriented box
+# fitted to the diagonal knee-link mesh with about 5 mm margin per side.
+# Proximal arm links, chassis, wheels, environment and within-arm adjacent
+# pairs are intentionally omitted. Distances and dimensions are in metres.
+schema_version: 1
+name: dm25_pr02_hr_pd04_eg_20260810_sparse_self_collision
+reference:
+  package: dm25_pr02_hr_pd04_eg_20260810
+  urdf: urdf/dm25_pr02_hr_pd04_eg_20260810.urdf
+  root_frame: base_link
+constraint:
+  minimum_distance: 0.010
+  collision_detection_distance: 0.020
+  gain: 0.85
+geometry_groups:
+  upper_torso:
+    - name: upper_torso_proxy
+      frame: hip_yaw_link
+      origin:
+        xyz: [0.013189, 6.0e-06, 0.229876]
+        rpy: [0.0, 0.0, 0.0]
+      geometry:
+        type: box
+        size: [0.287362, 0.382987, 0.483751]
+  hip:
+    - name: hip_pitch_proxy
+      frame: hip_pitch_link
+      origin:
+        xyz: [0.0, 0.00075, 0.043027]
+        rpy: [0.0, 0.0, 0.0]
+      geometry:
+        type: box
+        size: [0.222046, 0.233531, 0.229054]
+  head:
+    - name: head_proxy
+      frame: head_pitch_link
+      origin:
+        xyz: [0.048887, -0.00046, 0.065403]
+        rpy: [0.0, 0.0, 0.0]
+      geometry:
+        type: sphere
+        radius: 0.15
+  thigh:
+    - name: thigh_proxy
+      frame: knee_link
+      origin:
+        xyz: [-0.091711, 0.00077, 0.148333]
+        rpy: [0.0, -0.673261, 0.0]
+      geometry:
+        type: box
+        size: [0.218085, 0.275624, 0.522706]
+  left_forearm:
+    - name: left_arm_4_proxy
+      frame: arm_left_4_link
+      origin:
+        xyz: [0.0, 0.008074, -0.029041]
+        rpy: [0.0, 0.0, 0.0]
+      geometry:
+        type: box
+        size: [0.080323, 0.096471, 0.128918]
+    - name: left_arm_5_proxy
+      frame: arm_left_5_link
+      origin:
+        xyz: [-4.0e-06, 0.004298, 0.0576]
+        rpy: [0.0, 0.0, 0.0]
+      geometry:
+        type: box
+        size: [0.074923, 0.083596, 0.1178]
+  left_wrist:
+    - name: left_wrist_6_proxy
+      frame: arm_left_6_link
+      origin:
+        xyz: [-0.005605, 0.008934, -0.032224]
+        rpy: [0.0, 0.0, 0.0]
+      geometry:
+        type: box
+        size: [0.089599, 0.086133, 0.131376]
+    - name: left_wrist_7_proxy
+      frame: arm_left_7_link
+      origin:
+        xyz: [0.006694, 0.0, -0.019251]
+        rpy: [0.0, 0.0, 0.0]
+      geometry:
+        type: box
+        size: [0.078609, 0.065209, 0.093498]
+  left_gripper:
+    - name: left_gripper_proxy
+      frame: left_gripper_base_link
+      origin:
+        xyz: [0.014779, 0.0, 0.037934]
+        rpy: [0.0, 0.0, 0.0]
+      geometry:
+        type: box
+        size: [0.181, 0.133, 0.21]
+  right_forearm:
+    - name: right_arm_4_proxy
+      frame: arm_right_4_link
+      origin:
+        xyz: [0.0, 0.008074, 0.029041]
+        rpy: [0.0, 0.0, 0.0]
+      geometry:
+        type: box
+        size: [0.080323, 0.096471, 0.128918]
+    - name: right_arm_5_proxy
+      frame: arm_right_5_link
+      origin:
+        xyz: [-4.0e-06, 0.004298, -0.0576]
+        rpy: [0.0, 0.0, 0.0]
+      geometry:
+        type: box
+        size: [0.074923, 0.083595, 0.1178]
+  right_wrist:
+    - name: right_wrist_6_proxy
+      frame: arm_right_6_link
+      origin:
+        xyz: [-0.005605, -0.008934, -0.032224]
+        rpy: [0.0, 0.0, 0.0]
+      geometry:
+        type: box
+        size: [0.089599, 0.086133, 0.131376]
+    - name: right_wrist_7_proxy
+      frame: arm_right_7_link
+      origin:
+        xyz: [0.006695, 0.0, -0.019251]
+        rpy: [0.0, 0.0, 0.0]
+      geometry:
+        type: box
+        size: [0.078609, 0.065209, 0.093498]
+  right_gripper:
+    - name: right_gripper_proxy
+      frame: right_gripper_base_link
+      origin:
+        xyz: [0.014779, 0.0, 0.037934]
+        rpy: [0.0, 0.0, 0.0]
+      geometry:
+        type: box
+        size: [0.181, 0.133, 0.21]
+collision_pair_groups:
+  - name: left_forearm_vs_upper_torso
+    first_group: left_forearm
+    second_group: upper_torso
+    excluded_pairs: []
+  - name: left_forearm_vs_head
+    first_group: left_forearm
+    second_group: head
+    excluded_pairs: []
+  - name: left_wrist_vs_upper_torso
+    first_group: left_wrist
+    second_group: upper_torso
+    excluded_pairs: []
+  - name: left_wrist_vs_hip
+    first_group: left_wrist
+    second_group: hip
+    excluded_pairs: []
+  - name: left_wrist_vs_head
+    first_group: left_wrist
+    second_group: head
+    excluded_pairs: []
+  - name: left_gripper_vs_upper_torso
+    first_group: left_gripper
+    second_group: upper_torso
+    excluded_pairs: []
+  - name: left_gripper_vs_hip
+    first_group: left_gripper
+    second_group: hip
+    excluded_pairs: []
+  - name: left_gripper_vs_head
+    first_group: left_gripper
+    second_group: head
+    excluded_pairs: []
+  - name: left_wrist_vs_thigh
+    first_group: left_wrist
+    second_group: thigh
+    excluded_pairs: []
+  - name: left_gripper_vs_thigh
+    first_group: left_gripper
+    second_group: thigh
+    excluded_pairs: []
+  - name: right_forearm_vs_upper_torso
+    first_group: right_forearm
+    second_group: upper_torso
+    excluded_pairs: []
+  - name: right_forearm_vs_head
+    first_group: right_forearm
+    second_group: head
+    excluded_pairs: []
+  - name: right_wrist_vs_upper_torso
+    first_group: right_wrist
+    second_group: upper_torso
+    excluded_pairs: []
+  - name: right_wrist_vs_hip
+    first_group: right_wrist
+    second_group: hip
+    excluded_pairs: []
+  - name: right_wrist_vs_head
+    first_group: right_wrist
+    second_group: head
+    excluded_pairs: []
+  - name: right_gripper_vs_upper_torso
+    first_group: right_gripper
+    second_group: upper_torso
+    excluded_pairs: []
+  - name: right_gripper_vs_hip
+    first_group: right_gripper
+    second_group: hip
+    excluded_pairs: []
+  - name: right_gripper_vs_head
+    first_group: right_gripper
+    second_group: head
+    excluded_pairs: []
+  - name: right_wrist_vs_thigh
+    first_group: right_wrist
+    second_group: thigh
+    excluded_pairs: []
+  - name: right_gripper_vs_thigh
+    first_group: right_gripper
+    second_group: thigh
+    excluded_pairs: []
+  - name: left_gripper_vs_right_gripper
+    first_group: left_gripper
+    second_group: right_gripper
+    excluded_pairs: []
+  - name: left_gripper_vs_right_wrist
+    first_group: left_gripper
+    second_group: right_wrist
+    excluded_pairs: []
+  - name: left_gripper_vs_right_forearm
+    first_group: left_gripper
+    second_group: right_forearm
+    excluded_pairs: []
+  - name: right_gripper_vs_left_wrist
+    first_group: right_gripper
+    second_group: left_wrist
+    excluded_pairs: []
+  - name: right_gripper_vs_left_forearm
+    first_group: right_gripper
+    second_group: left_forearm
+    excluded_pairs: []

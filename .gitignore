@@ -1,0 +1,8 @@
+.DS_Store
+**/.venv/
+**/__pycache__/
+**/*.py[cod]
+**/native/build/
+**/outputs/
+**/.workspace_cache/
+**/.pytest_cache/

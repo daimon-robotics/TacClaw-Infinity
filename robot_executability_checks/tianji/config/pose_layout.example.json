@@ -1,0 +1,22 @@
+{
+  "feature": "observation.state",
+  "quaternion_order": "xyzw",
+  "left": [
+    "left_x",
+    "left_y",
+    "left_z",
+    "left_qx",
+    "left_qy",
+    "left_qz",
+    "left_qw"
+  ],
+  "right": [
+    "right_x",
+    "right_y",
+    "right_z",
+    "right_qx",
+    "right_qy",
+    "right_qz",
+    "right_qw"
+  ]
+}
